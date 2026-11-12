@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Regression Guard — 证明 AI 改对了，也证明它没改坏</title>
-<meta name="description" content="Regression Guard 把团队已批准的业务行为变成可复用的检查，在 AI 编码代理改完代码后执行，并给出绑定代码版本与证据的 PASS / FAIL / UNKNOWN 结论。全部在本地运行。">
+<meta name="description" content="Regression Guard 把团队已批准的业务行为变成可复用的检查，在 AI 编码代理改完代码后执行，并给出绑定代码版本与证据的 PASS / FAIL / UNKNOWN 结论。确定性判定、本地执行、发布前版本。">
 <meta name="theme-color" content="#070C16">
 <meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://drake-yuan.github.io/regression-guard-site/zh/">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Regression Guard">
 <meta property="og:title" content="Regression Guard — 证明 AI 改对了，也证明它没改坏">
-<meta property="og:description" content="Regression Guard 把团队已批准的业务行为变成可复用的检查，在 AI 编码代理改完代码后执行，并给出绑定代码版本与证据的 PASS / FAIL / UNKNOWN 结论。全部在本地运行。">
+<meta property="og:description" content="Regression Guard 把团队已批准的业务行为变成可复用的检查，在 AI 编码代理改完代码后执行，并给出绑定代码版本与证据的 PASS / FAIL / UNKNOWN 结论。确定性判定、本地执行、发布前版本。">
 <meta property="og:url" content="https://drake-yuan.github.io/regression-guard-site/zh/">
 <meta property="og:image" content="https://drake-yuan.github.io/regression-guard-site/assets/img/og.png">
 <meta property="og:image:width" content="1200">
@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="Regression Guard — a verification layer for AI-driven development">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Regression Guard — 证明 AI 改对了，也证明它没改坏">
-<meta name="twitter:description" content="Regression Guard 把团队已批准的业务行为变成可复用的检查，在 AI 编码代理改完代码后执行，并给出绑定代码版本与证据的 PASS / FAIL / UNKNOWN 结论。全部在本地运行。">
+<meta name="twitter:description" content="Regression Guard 把团队已批准的业务行为变成可复用的检查，在 AI 编码代理改完代码后执行，并给出绑定代码版本与证据的 PASS / FAIL / UNKNOWN 结论。确定性判定、本地执行、发布前版本。">
 <meta name="twitter:image" content="https://drake-yuan.github.io/regression-guard-site/assets/img/og.png">
 
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
@@ -60,28 +60,8 @@
       "name": "Regression Guard",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "macOS, Windows, Linux",
-      "description": "Regression Guard 把团队已批准的业务行为变成可复用的检查，在 AI 编码代理改完代码后执行，并给出绑定代码版本与证据的 PASS / FAIL / UNKNOWN 结论。全部在本地运行。",
-      "url": "https://drake-yuan.github.io/regression-guard-site/zh/",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Free",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        {
-          "@type": "Offer",
-          "name": "Pro",
-          "price": "19",
-          "priceCurrency": "USD"
-        },
-        {
-          "@type": "Offer",
-          "name": "Team",
-          "price": "59",
-          "priceCurrency": "USD"
-        }
-      ]
+      "description": "Regression Guard 把团队已批准的业务行为变成可复用的检查，在 AI 编码代理改完代码后执行，并给出绑定代码版本与证据的 PASS / FAIL / UNKNOWN 结论。确定性判定、本地执行、发布前版本。",
+      "url": "https://drake-yuan.github.io/regression-guard-site/zh/"
     }
   ]
 }
@@ -306,37 +286,37 @@
 <!-- PRICING -->
 <section class="mk-sec" id="pricing"><div class="mk-wrap">
 <div class="mk-sec-head center">
-<span class="mk-eyebrow">定价</span>
-<h2 class="mk-h2">按项目付费。<br><span class="mk-grad">模型费用由你自己掌握。</span></h2>
-<p class="mk-lede">我们不转售模型调用。你用自己的 Key 连自己的模型账号，账单透明，随时可换。</p>
+<span class="mk-eyebrow">定价 · 草案</span>
+<h2 class="mk-h2">规划中的定价。<br><span class="mk-grad">现在还买不了。</span></h2>
+<p class="mk-lede">发布前产品的分层草案。目前没有任何套餐可购买，下面每一条权益都是拟议范围，而非已经上线的功能；正式上线前价格都可能调整。</p>
 </div>
 <div class="mk-price">
-<div class="mk-plan"><h3>Free</h3><div class="mk-amount"><b>$0</b><span>/ 永久</span></div><p class="mk-lead-sm">先把一个项目完整跑通。</p>
+<div class="mk-plan"><h3>Free</h3><div class="mk-amount"><b>$0</b><span>/ 永久</span></div><p class="mk-lead-sm">拟议范围：先把一个项目完整跑通。</p>
 <ul>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>1 个项目 · 1 个 Coding Agent</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>变更触发不限次</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>变更触发（正在验证）</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>手动全量 3 次 / 月</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>证据保留 7 天</li>
 <li class="off"><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>定时回归</li>
 </ul>
 <a class="mk-btn block" href="../access.html">申请内测</a></div>
 
-<div class="mk-plan hot"><span class="mk-badge">推荐</span><h3>Pro</h3><div class="mk-amount"><b>$19</b><span>/ 月</span></div><p class="mk-lead-sm">一个人或一个小团队的日常。</p>
+<div class="mk-plan hot"><span class="mk-badge">推荐</span><h3>Pro</h3><div class="mk-amount"><b>$19</b><span>/ 月</span></div><p class="mk-lead-sm">拟议范围：一个人或一个小团队。</p>
 <ul>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>5 个项目 · 不限 Agent</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>全量回归不限次</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>定时回归 · CI 触发</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>定时回归 · CI 触发（正在验证）</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>证据保留 90 天</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>共享预期库</li>
 </ul>
 <a class="mk-btn primary block" href="../access.html">申请内测</a></div>
 
-<div class="mk-plan"><h3>Team</h3><div class="mk-amount"><b>$59</b><span>/ 月</span></div><p class="mk-lead-sm">需要审批与审计的团队。</p>
+<div class="mk-plan"><h3>Team</h3><div class="mk-amount"><b>$59</b><span>/ 月</span></div><p class="mk-lead-sm">拟议范围：面向需要审批与审计的团队。</p>
 <ul>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>不限项目</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>预期批准留痕与审批流</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>证据导出 · 审计报告</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>私有 Runner</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>私有 Runner（规划中）</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>SSO（规划中）</li>
 </ul>
 <a class="mk-btn block" href="../access.html">联系我们</a></div>
@@ -344,11 +324,11 @@
 
 <div class="mk-byok">
 <span class="mk-ico"><svg class="icon" aria-hidden="true"><use href="#mi-key"/></svg></span>
-<div><b>自带模型 Key，不是我们代付</b>
-<p>首版不提供内置模型额度。你在设置里选择服务商（OpenAI / Anthropic / DeepSeek / 通义千问 / 任意 OpenAI 兼容端点）并填入自己的 API Key，费用由你的模型账号直接结算。一次运行的模型成本通常在几美分到几十美分之间，取决于模型与检查条数——界面上按你的实际 token 用量估算，而不是拍一个数。</p>
-<p>模型只做两件事：起草检查步骤、解释失败原因。<b>判定不经过模型</b>——结论由确定性断言与已批准预期计算得出，换模型不会改变历史结论。</p></div>
+<div><b>判定不经过模型，自带 Key 是后续选项</b>
+<p>当前引擎在一次常规回归里调用模型 0 次。结论由确定性断言比对人工批准的预期计算得出：<b>判定不经过模型</b>，换模型不会改变历史结论。当前版本不需要配置 API Key。</p>
+<p>用模型辅助起草检查步骤、解释失败原因仍属规划，尚未交付。若将来提供，将采用自带 Key：费用由你的服务商直接结算，取决于所选模型、token 用量与验证工作量；我们不转售模型调用，也不打包额度。在没有真实用量数据之前，不给出单次运行的成本区间。</p></div>
 </div>
-<p class="mk-note spaced">内测期间价格仅供参考，本页不发生任何支付。</p>
+<p class="mk-note spaced">价格与权益均为发布前产品的参考草案。目前没有任何套餐可购买，本页不发生任何支付。</p>
 </div></section>
 
 <!-- FAQ -->

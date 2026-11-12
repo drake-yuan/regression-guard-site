@@ -314,7 +314,9 @@
    access.html: account + model/key form (dark, same theme as the marketing site)
    ========================================================================== */
 .mk-auth{display:grid;grid-template-columns:412px 1fr;min-height:100vh;background:var(--mk-bg)}
-.mk-authside{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:30px 34px 34px;color:#fff;background:linear-gradient(165deg,#0B1626,#0A1A2C 62%,#0C2033);border-right:1px solid var(--mk-line)}
+/* Content stays grouped at the top. space-between used to stretch the rail and the
+   security note apart whenever the right column grew, leaving a large dead gap. */
+.mk-authside{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-start;padding:30px 34px 34px;color:#fff;background:linear-gradient(165deg,#0B1626,#0A1A2C 62%,#0C2033);border-right:1px solid var(--mk-line)}
 .mk-authside:before{content:"";position:absolute;inset:0;background:radial-gradient(420px 320px at 12% 4%,rgba(88,150,240,.16),transparent 70%);pointer-events:none}
 .mk-authside>*{position:relative}
 .mk-aside-copy{margin-top:46px}
@@ -323,7 +325,7 @@
 .mk-trust{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
 .mk-trust li{display:flex;gap:9px;font-size:var(--fs-xs);line-height:1.65;color:#A8BCD6}
 .mk-trust .icon{width:14px;height:14px;color:var(--mk-green);flex:0 0 auto;margin-top:2px}
-.mk-rail{margin-top:0;display:flex;flex-direction:column;gap:16px;padding-top:0}
+.mk-rail{margin-top:44px;display:flex;flex-direction:column;gap:16px;padding-top:0}
 .mk-railitem{display:flex;gap:11px;align-items:flex-start;opacity:.48;transition:opacity .2s}
 .mk-railitem.on,.mk-railitem.done{opacity:1}
 .mk-raildot{width:23px;height:23px;border-radius:50%;border:1px solid #35506F;display:grid;place-items:center;flex:0 0 auto;font-size:var(--fs-xs);font-weight:800;color:#A9BBD8;font-variant-numeric:tabular-nums}
@@ -563,6 +565,9 @@
 .mk-list li .icon{width:15px;height:15px;flex:0 0 auto;margin-top:5px;color:var(--mk-green)}
 .mk-list.muted li{color:#9FB0C6}
 .mk-list.muted li .icon{color:var(--mk-red)}
+/* Items under validation or on the roadmap: neutral tone, never the green "shipped" check */
+.mk-list.pending li{color:#9FB0C6}
+.mk-list.pending li .icon{color:#6E8199}
 .mk-list li code{padding:1px 5px;border-radius:4px;background:rgba(255,255,255,.07);border:1px solid var(--mk-line2);
   font:var(--fs-xs)/1.6 var(--mk-mono);color:#CBD9EA}
 

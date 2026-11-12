@@ -29,7 +29,7 @@ export const PAGES = [
     alt: 'zh/index.html',
     altLang: 'zh-CN',
     title: 'Regression Guard — verify what your AI agent changed, and what it broke',
-    desc: 'Regression Guard turns approved business behavior into reusable checks, runs them against the change an AI coding agent just made, and returns PASS, FAIL or UNKNOWN with version-bound evidence. Runs locally.',
+    desc: 'Regression Guard turns approved business behavior into reusable checks, runs them against the change an AI coding agent just made, and returns PASS, FAIL or UNKNOWN with version-bound evidence. Deterministic, local, pre-release.',
     jsonld: 'software',
   },
   {
@@ -40,7 +40,7 @@ export const PAGES = [
     alt: 'index.html',
     altLang: 'en',
     title: 'Regression Guard — 证明 AI 改对了，也证明它没改坏',
-    desc: 'Regression Guard 把团队已批准的业务行为变成可复用的检查，在 AI 编码代理改完代码后执行，并给出绑定代码版本与证据的 PASS / FAIL / UNKNOWN 结论。全部在本地运行。',
+    desc: 'Regression Guard 把团队已批准的业务行为变成可复用的检查，在 AI 编码代理改完代码后执行，并给出绑定代码版本与证据的 PASS / FAIL / UNKNOWN 结论。确定性判定、本地执行、发布前版本。',
     jsonld: 'software',
   },
   {
@@ -51,7 +51,7 @@ export const PAGES = [
     alt: 'zh/access.html',
     altLang: 'zh-CN',
     title: 'Request early access — Regression Guard',
-    desc: 'Regression Guard is onboarding in small batches. Here is exactly what the early access build includes, what we ask for, and what we never collect.',
+    desc: 'Regression Guard is onboarding in small batches. What is available in the engine today, what is still being validated, what we ask for and what we never collect.',
     jsonld: 'webpage',
   },
   {
@@ -62,7 +62,7 @@ export const PAGES = [
     alt: 'access.html',
     altLang: 'en',
     title: '申请内测 — Regression Guard',
-    desc: 'Regression Guard 正在小批量放号。这一页写清：内测版包含什么、申请要提供什么、我们绝不收集什么。',
+    desc: 'Regression Guard 正在小批量放号。这一页写清：引擎当前可用什么、哪些能力仍在验证、申请要提供什么、我们绝不收集什么。',
     jsonld: 'webpage',
   },
   {

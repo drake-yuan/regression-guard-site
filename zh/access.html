@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>申请内测 — Regression Guard</title>
-<meta name="description" content="Regression Guard 正在小批量放号。这一页写清：内测版包含什么、申请要提供什么、我们绝不收集什么。">
+<meta name="description" content="Regression Guard 正在小批量放号。这一页写清：引擎当前可用什么、哪些能力仍在验证、申请要提供什么、我们绝不收集什么。">
 <meta name="theme-color" content="#070C16">
 <meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://drake-yuan.github.io/regression-guard-site/zh/access.html">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Regression Guard">
 <meta property="og:title" content="申请内测 — Regression Guard">
-<meta property="og:description" content="Regression Guard 正在小批量放号。这一页写清：内测版包含什么、申请要提供什么、我们绝不收集什么。">
+<meta property="og:description" content="Regression Guard 正在小批量放号。这一页写清：引擎当前可用什么、哪些能力仍在验证、申请要提供什么、我们绝不收集什么。">
 <meta property="og:url" content="https://drake-yuan.github.io/regression-guard-site/zh/access.html">
 <meta property="og:image" content="https://drake-yuan.github.io/regression-guard-site/assets/img/og.png">
 <meta property="og:image:width" content="1200">
@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="Regression Guard — a verification layer for AI-driven development">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="申请内测 — Regression Guard">
-<meta name="twitter:description" content="Regression Guard 正在小批量放号。这一页写清：内测版包含什么、申请要提供什么、我们绝不收集什么。">
+<meta name="twitter:description" content="Regression Guard 正在小批量放号。这一页写清：引擎当前可用什么、哪些能力仍在验证、申请要提供什么、我们绝不收集什么。">
 <meta name="twitter:image" content="https://drake-yuan.github.io/regression-guard-site/assets/img/og.png">
 
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
@@ -60,7 +60,7 @@
       "@id": "https://drake-yuan.github.io/regression-guard-site/zh/access.html#page",
       "url": "https://drake-yuan.github.io/regression-guard-site/zh/access.html",
       "name": "申请内测 — Regression Guard",
-      "description": "Regression Guard 正在小批量放号。这一页写清：内测版包含什么、申请要提供什么、我们绝不收集什么。",
+      "description": "Regression Guard 正在小批量放号。这一页写清：引擎当前可用什么、哪些能力仍在验证、申请要提供什么、我们绝不收集什么。",
       "inLanguage": "zh-CN",
       "isPartOf": {
         "@id": "https://drake-yuan.github.io/regression-guard-site/#site"
@@ -120,21 +120,21 @@
 <aside class="mk-authside">
 <div class="mk-aside-copy">
 <h2>小批量放号，<br>因为接入本身就是一次对话。</h2>
-<p>产品还没正式发布。每一份内测申请都由人来读，绝大多数情况下，第一次「被验证的改动」就在接入当次跑出来。</p>
+<p>产品还没正式发布，每一份内测申请都由人来读。接入阶段的目标是守住一条你已经信任的行为；目前没有实测的接入时长数据，所以我们不写具体时间。</p>
 <ul class="mk-trust">
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>不需要信用卡，也不会自动续费</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>源码与模型 Key 留在你自己的机器上</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>源码与运行证据留在你自己的机器上</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>随时可以退出，没有数据被锁住</li>
 </ul>
 </div>
 <div class="mk-rail" aria-label="接入流程">
 <div class="mk-railitem on"><span class="mk-raildot">1</span><div><b>发一份简短申请</b><small>项目类型、用的 Coding Agent、最想守住的行为</small></div></div>
-<div class="mk-railitem"><span class="mk-raildot">2</span><div><b>30 分钟接入</b><small>指向一个项目，挑一条你已经信任的检查</small></div></div>
+<div class="mk-railitem"><span class="mk-raildot">2</span><div><b>挑一条你信任的检查</b><small>指向一个项目；不承诺接入耗时</small></div></div>
 <div class="mk-railitem"><span class="mk-raildot">3</span><div><b>第一次验证</b><small>一次 Agent 改动 → PASS / FAIL / UNKNOWN 与证据</small></div></div>
 </div>
 <div class="mk-secure">
 <svg class="icon" aria-hidden="true"><use href="#mi-lock"/></svg>
-<span>这一页不会向你索取 API Key。在产品里，Key 存放在你本机，只用于你自己发起的请求。</span>
+<span>这一页不会向你索取 API Key。当前引擎一次常规回归调用模型 0 次，因此无需配置 Key；若将来提供自带 Key 的能力，Key 也只留在你本机。</span>
 </div>
 </aside>
 
@@ -150,7 +150,7 @@
 <ul>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>你用的是哪个 Coding Agent（Codex / Claude Code / Cursor / 自研）</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>项目大致类型，以及你最想守住的那条行为</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>只在本地跑，还是也要接进 CI</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>打算只在本地跑，还是以后也想接 CI</li>
 </ul>
 <div class="mk-invite-actions">
 <a class="mk-btn primary" href="https://github.com/drake-yuan/regression-guard-site/issues/new?template=early-access.yml" target="_blank" rel="noopener">打开申请表单<svg class="icon mk-ext" aria-hidden="true"><use href="#mi-external"/></svg></a>
@@ -160,13 +160,37 @@
 </div>
 
 <div class="mk-subblock">
-<h2>内测版包含什么</h2>
+<h2>这轮内测在验证什么</h2>
+<p class="mk-hint">验证引擎现在已经能跑，外围的自动化还在建。下面把状态拆开写，让你清楚自己要试的到底是什么；列出的一切都不作为交付承诺。</p>
+</div>
+
+<div class="mk-subblock">
+<h2>引擎里已经可用</h2>
 <ul class="mk-list">
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>一个项目、一个 Coding Agent，由改动后的 Hook 触发</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>本地 Playwright 执行，每条结论都附证据</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>由你审阅并保留的已批准预期——AI 只能提议，不能批准</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>手动全量回归，外加一个用于定时回归的 CI 任务</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>自带模型 Key：运行在你机器上，账单在你账号上</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>本地真实 Chromium 会话里执行确定性检查</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>PASS / FAIL / UNKNOWN 三态，UNKNOWN 绝不会被算作通过</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>绑定代码版本的证据，以及单文件 HTML 报告</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>人工批准闸门：没有已批准预期，就不执行</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>单项目、单次运行单场景，工作台只绑本地回环地址</li>
+</ul>
+</div>
+
+<div class="mk-subblock">
+<h2>正在验证，尚未交付</h2>
+<ul class="mk-list pending">
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>由 Coding Agent 改动后 Hook 自动触发一次验证</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>供 CI 调用的全量回归 CLI 命令，以及可跑的 CI 示例</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>定时回归，以及能区分触发源的运行记录</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>自带模型 Key 前提下的检查步骤辅助起草</li>
+</ul>
+</div>
+
+<div class="mk-subblock">
+<h2>规划中，不承诺时间</h2>
+<ul class="mk-list pending">
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>共享预期库与团队审批留痕</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>托管 Runner、多环境矩阵、SSO</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>内置调度与自动失败修复</li>
 </ul>
 </div>
 

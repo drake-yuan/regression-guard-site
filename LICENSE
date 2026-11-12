@@ -19,3 +19,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Scope
+-----
+
+The grant above covers the source code and build tooling of this repository only:
+tools/*.mjs, src/layout.html, src/sprite.svg, assets/css/site.css, assets/js/site.js,
+and the HTML/CSS structure of the generated pages.
+
+No license is granted for the following, which are excluded from "the Software":
+the Regression Guard name and wordmark; assets/img/* (product screenshot, social
+image, touch icon and favicon); and the site/product copy contained in
+src/pages/*.html, src/ui.json, the page descriptions in tools/config.mjs and the
+generated pages. These may not be reused to market another product without permission.

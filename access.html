@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Request early access — Regression Guard</title>
-<meta name="description" content="Regression Guard is onboarding in small batches. Here is exactly what the early access build includes, what we ask for, and what we never collect.">
+<meta name="description" content="Regression Guard is onboarding in small batches. What is available in the engine today, what is still being validated, what we ask for and what we never collect.">
 <meta name="theme-color" content="#070C16">
 <meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://drake-yuan.github.io/regression-guard-site/access.html">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Regression Guard">
 <meta property="og:title" content="Request early access — Regression Guard">
-<meta property="og:description" content="Regression Guard is onboarding in small batches. Here is exactly what the early access build includes, what we ask for, and what we never collect.">
+<meta property="og:description" content="Regression Guard is onboarding in small batches. What is available in the engine today, what is still being validated, what we ask for and what we never collect.">
 <meta property="og:url" content="https://drake-yuan.github.io/regression-guard-site/access.html">
 <meta property="og:image" content="https://drake-yuan.github.io/regression-guard-site/assets/img/og.png">
 <meta property="og:image:width" content="1200">
@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="Regression Guard — a verification layer for AI-driven development">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Request early access — Regression Guard">
-<meta name="twitter:description" content="Regression Guard is onboarding in small batches. Here is exactly what the early access build includes, what we ask for, and what we never collect.">
+<meta name="twitter:description" content="Regression Guard is onboarding in small batches. What is available in the engine today, what is still being validated, what we ask for and what we never collect.">
 <meta name="twitter:image" content="https://drake-yuan.github.io/regression-guard-site/assets/img/og.png">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -60,7 +60,7 @@
       "@id": "https://drake-yuan.github.io/regression-guard-site/access.html#page",
       "url": "https://drake-yuan.github.io/regression-guard-site/access.html",
       "name": "Request early access — Regression Guard",
-      "description": "Regression Guard is onboarding in small batches. Here is exactly what the early access build includes, what we ask for, and what we never collect.",
+      "description": "Regression Guard is onboarding in small batches. What is available in the engine today, what is still being validated, what we ask for and what we never collect.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://drake-yuan.github.io/regression-guard-site/#site"
@@ -120,21 +120,21 @@
 <aside class="mk-authside">
 <div class="mk-aside-copy">
 <h2>Onboarding in small batches,<br>because setup is a conversation.</h2>
-<p>The product is pre-release. Every early access request is read by a human, and the first verified change usually happens in the same session as setup.</p>
+<p>The product is pre-release. Every early access request is read by a human. Getting one behavior you trust under verification is the goal of onboarding; we have no measured setup time yet, so we do not quote one.</p>
 <ul class="mk-trust">
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>No credit card, no automatic renewal</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Your source and model key stay on your machine</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Your source code and run evidence stay on your machine</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Leave at any time; nothing is locked in</li>
 </ul>
 </div>
 <div class="mk-rail" aria-label="How onboarding works">
 <div class="mk-railitem on"><span class="mk-raildot">1</span><div><b>Send one short request</b><small>Project type, coding agent, what you want verified</small></div></div>
-<div class="mk-railitem"><span class="mk-raildot">2</span><div><b>30-minute setup</b><small>Point it at one project, pick one check you already trust</small></div></div>
+<div class="mk-railitem"><span class="mk-raildot">2</span><div><b>Pick one trusted check</b><small>Point it at one project; no time estimate is promised</small></div></div>
 <div class="mk-railitem"><span class="mk-raildot">3</span><div><b>First verified change</b><small>One agent change → PASS / FAIL / UNKNOWN with evidence</small></div></div>
 </div>
 <div class="mk-secure">
 <svg class="icon" aria-hidden="true"><use href="#mi-lock"/></svg>
-<span>This page does not ask for an API key. In the product, the key is stored locally on your machine and used only for the requests you start.</span>
+<span>This page does not ask for an API key. The current engine makes zero model calls, so there is no key to configure. If a bring-your-own-key option is added later, it will stay on your machine.</span>
 </div>
 </aside>
 
@@ -150,7 +150,7 @@
 <ul>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Which coding agent you use (Codex, Claude Code, Cursor, or your own)</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>What kind of project it is, and which behavior you most want protected</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Whether you would run it locally only, or in CI as well</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Whether you plan to run locally only, or want CI later</li>
 </ul>
 <div class="mk-invite-actions">
 <a class="mk-btn primary" href="https://github.com/drake-yuan/regression-guard-site/issues/new?template=early-access.yml" target="_blank" rel="noopener">Open the request form<svg class="icon mk-ext" aria-hidden="true"><use href="#mi-external"/></svg></a>
@@ -160,13 +160,37 @@
 </div>
 
 <div class="mk-subblock">
-<h2>What the early access build includes</h2>
+<h2>What we're validating in early access</h2>
+<p class="mk-hint">The verification engine runs today; the automation around it is still being built. Here is the split, so it is clear what you would actually be testing. Nothing below is a delivery commitment.</p>
+</div>
+
+<div class="mk-subblock">
+<h2>Available in the engine today</h2>
 <ul class="mk-list">
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>One project, one coding agent, triggered by a hook after each change</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Local Playwright execution with evidence attached to every verdict</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Approved expectations you review and keep — the AI can propose, never approve</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Manual full runs, plus a CI job for scheduled regression</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Bring your own model key: the run stays on your machine, the bill stays on your account</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Deterministic checks executed locally in a real Chromium session</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>PASS / FAIL / UNKNOWN, where UNKNOWN is never reported as a pass</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Evidence and a single-file HTML report bound to a code version</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>A human approval gate: no run against an unapproved expectation</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>One project, one scenario per run, on a loopback-only local workbench</li>
+</ul>
+</div>
+
+<div class="mk-subblock">
+<h2>Being validated — not shipped</h2>
+<ul class="mk-list pending">
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Coding-agent hooks that trigger a run after a change</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>A CLI command for full regression, plus a working CI example</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Scheduled runs and records that distinguish the trigger source</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Model-assisted check drafting behind a bring-your-own-key option</li>
+</ul>
+</div>
+
+<div class="mk-subblock">
+<h2>Planned — no date promised</h2>
+<ul class="mk-list pending">
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Shared expectation libraries and team approval trails</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Hosted runners, multi-environment matrices, SSO</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Built-in scheduling and automatic failure repair</li>
 </ul>
 </div>
 

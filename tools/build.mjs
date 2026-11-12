@@ -76,11 +76,9 @@ function structuredData(page) {
         operatingSystem: 'macOS, Windows, Linux',
         description: page.desc,
         url: abs(page.out),
-        offers: [
-          { '@type': 'Offer', name: 'Free', price: '0', priceCurrency: 'USD' },
-          { '@type': 'Offer', name: 'Pro', price: '19', priceCurrency: 'USD' },
-          { '@type': 'Offer', name: 'Team', price: '59', priceCurrency: 'USD' },
-        ],
+        // Intentionally no `offers`. Search engines read Offer as a live price;
+        // until a plan is actually purchasable, publishing one would be a false
+        // commercial statement. Re-add only when billing goes live.
       },
     ];
   } else {

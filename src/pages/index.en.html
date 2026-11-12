@@ -171,37 +171,37 @@
 <!-- PRICING -->
 <section class="mk-sec" id="pricing"><div class="mk-wrap">
 <div class="mk-sec-head center">
-<span class="mk-eyebrow">Pricing</span>
-<h2 class="mk-h2">Pay per project.<br><span class="mk-grad">Model cost stays yours.</span></h2>
-<p class="mk-lede">We do not resell model calls. You connect your own key to your own model account — transparent billing, switchable at any time.</p>
+<span class="mk-eyebrow">Pricing · proposed</span>
+<h2 class="mk-h2">Planned pricing.<br><span class="mk-grad">Nothing to buy yet.</span></h2>
+<p class="mk-lede">Draft tiers for a pre-release product. No plan is purchasable today, and every entitlement below is proposed scope rather than a shipped feature. Prices may change before launch.</p>
 </div>
 <div class="mk-price">
-<div class="mk-plan"><h3>Free</h3><div class="mk-amount"><b>$0</b><span>/ forever</span></div><p class="mk-lead-sm">Get one project verified end to end.</p>
+<div class="mk-plan"><h3>Free</h3><div class="mk-amount"><b>$0</b><span>/ forever</span></div><p class="mk-lead-sm">Proposed scope: get one project verified end to end.</p>
 <ul>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>1 project · 1 coding agent</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Change-triggered runs, unlimited</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Change-triggered runs (in validation)</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Manual full runs, 3 / month</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Evidence kept 7 days</li>
 <li class="off"><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Scheduled runs</li>
 </ul>
 <a class="mk-btn block" href="{{p}}access.html">Request early access</a></div>
 
-<div class="mk-plan hot"><span class="mk-badge">Recommended</span><h3>Pro</h3><div class="mk-amount"><b>$19</b><span>/ month</span></div><p class="mk-lead-sm">For one person or a small team.</p>
+<div class="mk-plan hot"><span class="mk-badge">Recommended</span><h3>Pro</h3><div class="mk-amount"><b>$19</b><span>/ month</span></div><p class="mk-lead-sm">Proposed scope: one person or a small team.</p>
 <ul>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>5 projects · unlimited agents</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Full runs, unlimited</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Scheduled runs via CI</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Scheduled runs via CI (in validation)</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Evidence kept 90 days</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Shared expectation library</li>
 </ul>
 <a class="mk-btn primary block" href="{{p}}access.html">Request early access</a></div>
 
-<div class="mk-plan"><h3>Team</h3><div class="mk-amount"><b>$59</b><span>/ month</span></div><p class="mk-lead-sm">For teams that need approval and audit.</p>
+<div class="mk-plan"><h3>Team</h3><div class="mk-amount"><b>$59</b><span>/ month</span></div><p class="mk-lead-sm">Proposed scope: approval and audit for teams.</p>
 <ul>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Unlimited projects</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Approval trail and review flow</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Evidence export · audit report</li>
-<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Private runner</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Private runner (planned)</li>
 <li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>SSO (planned)</li>
 </ul>
 <a class="mk-btn block" href="{{p}}access.html">Talk to us</a></div>
@@ -209,11 +209,11 @@
 
 <div class="mk-byok">
 <span class="mk-ico"><svg class="icon" aria-hidden="true"><use href="#mi-key"/></svg></span>
-<div><b>Bring your own model key — we do not pay for it</b>
-<p>There is no built-in model quota in the first release. You pick a provider (OpenAI / Anthropic / DeepSeek / Qwen / any OpenAI-compatible endpoint) and enter your own API key; usage is billed to your model account directly. A run costs cents, not dollars, because only the check steps and failure explanations touch a model — the interface estimates it from your actual token usage instead of guessing.</p>
-<p>The model does exactly two things: draft check steps and explain failures. <b>Verdicts never pass through the model</b> — they are computed from deterministic assertions against approved expectations. Swapping models cannot change a historical verdict.</p></div>
+<div><b>Verdicts never pass through a model — BYOK is a later option</b>
+<p>The current engine makes zero model calls during a normal regression run. Verdicts are computed from deterministic assertions against human-approved expectations — <b>verdicts never pass through a model</b>, and swapping models cannot change a historical result. There is no API key to configure in the current build.</p>
+<p>Model-assisted drafting and failure explanations are planned, not shipped. If they land, they will be bring-your-own-key: usage is billed directly by your provider and depends on the selected model, token usage and verification workload. We do not resell model calls or bundle credits, and we will not quote a per-run cost until we have measured one.</p></div>
 </div>
-<p class="mk-note spaced">Prices are indicative while the product is in early access. Nothing is charged on this page.</p>
+<p class="mk-note spaced">Prices and entitlements are indicative drafts for a pre-release product. No plan is purchasable today, and this page never charges anything.</p>
 </div></section>
 
 <!-- FAQ -->
