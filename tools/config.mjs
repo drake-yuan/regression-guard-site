@@ -92,7 +92,7 @@ export const PAGES = [
     out: '404.html',
     lang: 'en',
     hreflang: 'en',
-    alt: 'index.html',
+    alt: 'zh/index.html',
     altLang: 'zh-CN',
     title: 'Page not found — Regression Guard',
     desc: 'This page does not exist. The verification report you were looking for is not here.',

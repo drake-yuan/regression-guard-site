@@ -76,7 +76,12 @@ async function verifyImages(page, note) {
         idx, { timeout: 4000 },
       );
     } catch {
-      note(`image never finished loading: ${src}`);
+      // A timeout is not proof of a broken image; confirm the final state.
+      const loaded = await page.evaluate((i) => {
+        const img = document.images[i];
+        return !!img && img.complete && img.naturalWidth > 0;
+      }, idx);
+      if (!loaded) note(`image never finished loading: ${src}`);
     }
   }
   await page.evaluate(() => window.scrollTo(0, 0));
@@ -97,6 +102,60 @@ async function blockButtonContainment(page, label, out) {
   offenders.forEach((o) => out.push(
     `${label}: .mk-btn.block "${o.text}" overhangs its container by ${o.right}px right / ${o.left}px left`,
   ));
+}
+
+async function languageRouting(page, label, out, lang) {
+  // Regression: ZH navigation anchors and CTAs once resolved against the
+  // repository root, so clicking the security nav item opened the EN homepage.
+  const zh = lang === 'zh';
+  const nav = page.locator('.mk-links a[href*="#security"]').first();
+  if (await nav.count() !== 1) {
+    out.push(`${label}: language nav link for #security is missing`);
+    return;
+  }
+  await nav.click();
+  // A cross-document navigation (stale build) needs a settled DOM first.
+  await page.waitForLoadState('domcontentloaded');
+  const anchor = await page.evaluate(() => ({
+    lang: document.documentElement?.lang || '',
+    path: location.pathname,
+    heading: (document.querySelector('#security h2') || {}).textContent?.trim() || '',
+  }));
+  if (anchor.lang !== (zh ? 'zh-CN' : 'en')) {
+    out.push(`${label}: clicking the ${lang} security nav link landed on lang=${anchor.lang}`);
+  }
+  const staysHome = zh
+    ? /\/zh\/$/.test(anchor.path) || /\/zh\/index\.html$/.test(anchor.path)
+    : !anchor.path.includes('/zh/');
+  if (!staysHome) out.push(`${label}: security nav link left the ${lang} site -> ${anchor.path}`);
+  const headingIsRightLang = zh ? /[\u4e00-\u9fff]/.test(anchor.heading) : !/[\u4e00-\u9fff]/.test(anchor.heading);
+  if (!headingIsRightLang) out.push(`${label}: security heading language mismatch: "${anchor.heading}"`);
+
+  await page.goto(BASE + (zh ? '/zh/' : '/'), { waitUntil: 'load' });
+  // Match by section, not by href: a stale build may point this CTA at the
+  // EN page, which is exactly what this check must report rather than miss.
+  // (The first href="access.html" in the DOM is the hidden mobile-menu CTA.)
+  const ctaLink = page.locator('#pricing a.mk-btn').first();
+  if (await ctaLink.count() !== 1) {
+    out.push(`${label}: no link to the local access page found`);
+    return;
+  }
+  await Promise.all([
+    page.waitForURL(/\/access\.html$/, { timeout: 10000 }).catch(() => {}),
+    ctaLink.click(),
+  ]);
+  await page.waitForLoadState('domcontentloaded');
+  const cta = await page.evaluate(() => ({
+    lang: document.documentElement?.lang || '',
+    path: location.pathname,
+    h1: document.querySelector('h1')?.textContent.trim() || '',
+  }));
+  const rightCta = zh
+    ? /\/zh\/access\.html$/.test(cta.path)
+    : /\/access\.html$/.test(cta.path) && !cta.path.includes('/zh/');
+  if (!rightCta) out.push(`${label}: access CTA landed on ${cta.path}, expected the ${lang} access page`);
+  if (cta.lang !== (zh ? 'zh-CN' : 'en')) out.push(`${label}: access CTA landed on lang=${cta.lang}`);
+  if (zh && !/[\u4e00-\u9fff]/.test(cta.h1)) out.push(`${label}: access page heading is not Chinese: "${cta.h1}"`);
 }
 
 async function homeInteractions(page, label, out) {
@@ -214,6 +273,7 @@ try {
 
       if (width === 1440 && (tag === 'en' || tag === 'zh')) {
         await homeInteractions(page, `${tag}@${width}`, interactionFailures);
+        await languageRouting(page, `${tag}@${width}`, interactionFailures, tag);
       }
       if (width === 390 && tag === 'en') {
         await menuInteractions(page, `${tag}@${width}`, interactionFailures);

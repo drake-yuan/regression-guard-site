@@ -143,20 +143,20 @@ try {
         };
       });
 
-      // Lazy images sit far below the fold on narrow screens; force them in
-      // before judging whether an image is broken.
-      await page.evaluate(() => {
-        [...document.images].forEach((i) => { i.loading = 'eager'; });
-        window.scrollTo(0, document.documentElement.scrollHeight);
+      // Lazy images sit far below the fold. Force decoding rather than polling
+      // with requestAnimationFrame, which can time out on a slow CDN response
+      // for a perfectly healthy image.
+      const imageStates = await page.evaluate(async () => {
+        const imgs = [...document.images];
+        imgs.forEach((i) => { i.loading = 'eager'; });
+        await Promise.race([
+          Promise.all(imgs.map((img) => img.decode().catch(() => {}))),
+          new Promise((resolve) => setTimeout(resolve, 15000)),
+        ]);
+        return imgs.map((i) => ({ src: i.currentSrc || i.src, ok: i.complete && i.naturalWidth > 0 }));
       });
-      let imagesOk = false;
-      try {
-        await page.waitForFunction(
-          () => [...document.images].every((i) => i.complete && i.naturalWidth > 0),
-          null, { timeout: 8000 },
-        );
-        imagesOk = true;
-      } catch { /* reported below */ }
+      const imagesOk = imageStates.every((s) => s.ok);
+      imageStates.filter((s) => !s.ok).forEach((s) => console.log('    broken image:', s.src));
 
       const local = [];
       if (res.status() !== 200) local.push(`status ${res.status()}`);
@@ -194,6 +194,58 @@ try {
       if (external.length) console.log('    external:', external.slice(0, 2).join(' | '));
       await page.close();
     }
+  }
+
+  // 3) Language routing. A ZH nav item or CTA must never open the EN site.
+  // This is an interaction check, not something a link-existence check sees.
+  console.log('\nLanguage routing:');
+  for (const width of [1440, 390]) {
+    const page = await browser.newPage({ viewport: { width, height: 900 } });
+    await page.goto(BASE + '/zh/', { waitUntil: 'domcontentloaded' });
+    if (width === 390) await page.click('#menuToggle');
+    const nav = page.locator('.mk-links a[href*="#security"]').first();
+    if (await nav.count() !== 1) {
+      note(`zh@${width}: security nav link missing`);
+    } else {
+      await nav.click();
+      // A stale build navigates cross-document here; wait for the new DOM
+      // instead of evaluating during teardown.
+      await page.waitForLoadState('domcontentloaded');
+      const s = await page.evaluate(() => ({
+        lang: document.documentElement?.lang || '',
+        path: location.pathname,
+        heading: (document.querySelector('#security h2') || {}).textContent?.trim() || '',
+      }));
+      const ok = s.lang === 'zh-CN'
+        && (/\/zh\/$/.test(s.path) || /\/zh\/index\.html$/.test(s.path))
+        && /[\u4e00-\u9fff]/.test(s.heading);
+      console.log(`  ${ok ? 'ok' : 'x'} zh@${width} nav   lang=${s.lang} path=${s.path}`);
+      if (!ok) note(`zh@${width}: clicking "信任与安全" left the ZH site (lang=${s.lang}, path=${s.path}, heading="${s.heading}")`);
+    }
+
+    await page.goto(BASE + '/zh/', { waitUntil: 'domcontentloaded' });
+    // Match by section, not by href: a stale build may point this CTA at the
+    // EN page, which is exactly what this check must report rather than crash on.
+    const ctaBtn = page.locator('#pricing a.mk-btn').first();
+    if (await ctaBtn.count() === 0) {
+      note(`zh@${width}: no pricing CTA found`);
+      await page.close();
+      continue;
+    }
+    await Promise.all([
+      page.waitForURL(/\/access\.html$/, { timeout: 12000 }).catch(() => {}),
+      ctaBtn.click(),
+    ]);
+    await page.waitForLoadState('domcontentloaded');
+    const c = await page.evaluate(() => ({
+      lang: document.documentElement?.lang || '',
+      path: location.pathname,
+      h1: document.querySelector('h1')?.textContent.trim() || '',
+    }));
+    const ctaOk = /\/zh\/access\.html$/.test(c.path) && c.lang === 'zh-CN' && /[\u4e00-\u9fff]/.test(c.h1);
+    console.log(`  ${ctaOk ? 'ok' : 'x'} zh@${width} CTA   lang=${c.lang} path=${c.path}`);
+    if (!ctaOk) note(`zh@${width}: ZH access CTA landed on ${c.path} (lang=${c.lang}, h1="${c.h1}")`);
+    await page.close();
   }
 } finally {
   await browser.close();

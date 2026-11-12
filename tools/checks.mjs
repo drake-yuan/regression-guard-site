@@ -52,13 +52,38 @@ for (const pg of PAGES) {
       continue;
     }
     const [file, hash] = href.split('#');
-    const target = normalize(join(dir, file));
+    let target = normalize(join(dir, file));
+    // Directory-form URLs ("./", "zh/", "../") resolve to that directory's
+    // index.html; treat them as files before checking their anchor targets.
+    const targetPath = join(ROOT, target);
+    if (existsSync(targetPath) && statSync(targetPath).isDirectory()) {
+      target = join(target, 'index.html');
+    }
     if (!has(target)) {
       problems.push(`${label}: link target missing -> ${href}`);
       continue;
     }
     if (hash) expect(idSet(read(target)).has(hash), `${label}: ${href} points to a missing id "${hash}"`);
   }
+
+  /* Same-language routing. A plain in-page link must resolve inside the
+     current language directory; only explicit language switches (marked with
+     hreflang) may cross. This catches the bug where ZH nav anchors pointed at
+     ../index.html and landed on the EN homepage. */
+  for (const m of html.matchAll(/<a\b([^>]*)>/g)) {
+    const tag = m[1];
+    const href = (tag.match(/href="([^"]+)"/) || [])[1];
+    if (!href || /^(https?:|mailto:|javascript:|data:|#)/.test(href)) continue;
+    if (/\bhreflang=/.test(tag)) continue;
+    const [file] = href.split('#');
+    const target = normalize(join(dir, file)).split('\\').join('/');
+    const resolved = target === '.' ? 'index.html' : target;
+    const escaped = pg.lang === 'zh'
+      ? /^(index|access|privacy)\.html$/.test(resolved)
+      : /^zh\/(index|access|privacy)\.html$/.test(resolved);
+    expect(!escaped, `${label}: link "${href}" escapes the ${pg.lang.toUpperCase()} site -> ${resolved}`);
+  }
+  expect(!/href=""/.test(html), `${label}: empty href (language switch would go nowhere)`);
 
   for (const m of html.matchAll(/\ssrc="([^"]+)"/g)) {
     const src = m[1];

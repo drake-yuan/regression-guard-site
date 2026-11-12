@@ -112,11 +112,18 @@ for (const page of PAGES) {
     desc: page.desc,
     canonical: abs(page.out),
     og: SITE.baseUrl + 'assets/img/og.png',
-    altUrl: relLink(page.out, page.alt),
+    // Language switch keeps the same page in the other language; use the
+    // directory form for index pages so it matches the canonical URL.
+    altUrl: (() => {
+      const rel = relLink(page.out, page.alt).replace(/index\.html$/, '');
+      return rel || './';
+    })(),
     altLang: page.altLang,
     altUrlAbs: abs(page.alt),
     xDefault: abs('index.html'),
-    home: p + 'index.html',
+    // Page-level links resolve against the current language directory.
+    // `p` is only for root-level shared assets, never for pages.
+    home: './',
     p,
     sprite,
     repo: SITE.repo,
