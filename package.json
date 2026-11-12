@@ -10,6 +10,7 @@
     "shots": "node tools/shots.mjs",
     "snap": "node tools/snap.mjs",
     "a11y": "node tools/a11y.mjs",
+    "live": "node tools/live.mjs",
     "qa": "npm run check && npm run shots"
   },
   "devDependencies": {

@@ -54,10 +54,13 @@ Publishing is a deliberate, human step — nothing here commits or pushes automa
 ```bash
 npm run build && npm run qa
 git add -A && git commit -m "build: publish site" && git push
+npm run live                   # after the Pages build reports "built"
 ```
 
 GitHub Pages takes 20–40 seconds to deploy; the first request may return an empty body or a
-previous version.
+previous version. `npm run live` verifies the deployed origin (HTTP status, canonical,
+hreflang, JSON-LD, retired claims and a light render pass) and fails if the served content is
+stale. `BASE=` overrides the origin, so the same script can check a local preview.
 
 ## Layout
 
@@ -72,6 +75,7 @@ previous version.
 | `tools/checks.mjs` | Static release gate: links, anchors, assets, canonical/hreflang, JSON-LD, sitemap, claim guard |
 | `tools/shots.mjs` | Browser QA: 7 pages x 5 widths plus keyboard/ARIA interaction assertions |
 | `tools/a11y.mjs` | Optional axe-core WCAG audit; skipped when the optional package is absent |
+| `tools/live.mjs` | Post-deploy verification against the live Pages origin |
 | `tools/serve.mjs` | Local preview server |
 | `tools/snap.mjs` | Section screenshots for visual inspection |
 | `tools/assets.mjs` | Generates `og.png` and the touch icon |
