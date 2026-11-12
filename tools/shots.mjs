@@ -82,6 +82,23 @@ async function verifyImages(page, note) {
   await page.evaluate(() => window.scrollTo(0, 0));
 }
 
+async function blockButtonContainment(page, label, out) {
+  // Full-width buttons must stay inside their parent box. A content-box
+  // width:100% plus horizontal padding once pushed CTAs past the card border.
+  const offenders = await page.evaluate(() => [...document.querySelectorAll('.mk-btn.block')]
+    .map((btn) => {
+      const parent = btn.parentElement;
+      if (!parent) return null;
+      const b = btn.getBoundingClientRect();
+      const p = parent.getBoundingClientRect();
+      return { text: btn.textContent.trim().slice(0, 32), right: Math.round(b.right - p.right), left: Math.round(p.left - b.left) };
+    })
+    .filter((r) => r && (r.right > 1 || r.left > 1)));
+  offenders.forEach((o) => out.push(
+    `${label}: .mk-btn.block "${o.text}" overhangs its container by ${o.right}px right / ${o.left}px left`,
+  ));
+}
+
 async function homeInteractions(page, label, out) {
   const note = (msg) => out.push(`${label}: ${msg}`);
 
@@ -169,6 +186,7 @@ try {
 
       const response = await page.goto(BASE + path, { waitUntil: 'load' });
       await settle(page);
+      await blockButtonContainment(page, `${tag}@${width}`, interactionFailures);
 
       const stats = await page.evaluate(() => {
         let minFs = 99;

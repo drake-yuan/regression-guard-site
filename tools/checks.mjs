@@ -156,6 +156,12 @@ const tooSmall = [...css.matchAll(/font-size:\s*(\d+(?:\.\d+)?)px/g)]
   .map((m) => m[0]);
 expect(tooSmall.length === 0, `site.css hardcodes sub-12px font sizes: ${tooSmall.join(', ')}`);
 
+// A width:100% button in a content-box world adds its padding on top, so it
+// overhangs the pricing card. Keep this coupled to the rule, not to a screenshot.
+const blockRule = css.match(/\.mk-btn\.block\{[^}]*\}/);
+expect(blockRule && /box-sizing:border-box/.test(blockRule[0]),
+  'site.css: .mk-btn.block must use border-box so width:100% includes its padding');
+
 const devFiles = readdirSync(join(ROOT, 'tools')).filter((f) => f.endsWith('.mjs')).map((f) => `tools/${f}`);
 devFiles.push('assets/css/site.css', 'assets/js/site.js');
 for (const f of devFiles) {

@@ -123,9 +123,18 @@ try {
         });
         const jsonld = [...document.querySelectorAll('script[type="application/ld+json"]')]
           .map((s) => { try { return JSON.parse(s.textContent); } catch { return { PARSE_ERROR: true }; } });
+        const blockOverhang = [...document.querySelectorAll('.mk-btn.block')]
+          .filter((btn) => {
+            const parent = btn.parentElement;
+            if (!parent) return false;
+            const b = btn.getBoundingClientRect();
+            const p = parent.getBoundingClientRect();
+            return b.right - p.right > 1 || p.left - b.left > 1;
+          }).length;
         return {
           overflow: de.scrollWidth - de.clientWidth,
           min,
+          blockOverhang,
           canonical: document.querySelector('link[rel="canonical"]')?.href || '',
           hreflang: [...document.querySelectorAll('link[rel="alternate"][hreflang]')]
             .map((l) => l.hreflang).sort(),
@@ -157,6 +166,7 @@ try {
       if (external.length) local.push(`${external.length} external requests`);
       if (failed.length) local.push(`${failed.length} failed requests`);
       if (!imagesOk) local.push('image failed to load');
+      if (info.blockOverhang) local.push(`${info.blockOverhang} full-width button(s) overhang their container`);
       if (info.canonical !== BASE + canonicalPath) local.push(`canonical ${info.canonical || '(missing)'}`);
       const wantLangs = ['en', 'x-default', 'zh-CN'].sort();
       if (JSON.stringify(info.hreflang) !== JSON.stringify(wantLangs)) {

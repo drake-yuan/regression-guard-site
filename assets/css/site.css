@@ -75,7 +75,8 @@
 .mk-btn.ghost{background:transparent;border-color:var(--mk-line2);color:var(--mk-text)}
 .mk-btn.ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(138,180,255,.45)}
 .mk-btn.lg{min-height:50px;padding:0 24px;font-size:var(--fs-md);border-radius:10px}
-.mk-btn.block{width:100%}
+/* width:100% must include the horizontal padding, or the button overhangs its card */
+.mk-btn.block{width:100%;box-sizing:border-box}
 .mk-btn:disabled,.mk-btn[disabled]{background:rgba(255,255,255,.045);border-color:transparent;color:#6E7F98;box-shadow:none;transform:none;cursor:not-allowed;filter:saturate(.35)}
 .mk-btn:disabled:hover,.mk-btn[disabled]:hover{transform:none;background:rgba(255,255,255,.045);border-color:transparent}
 .mk-nav-act .mk-btn{min-height:36px;padding:0 14px;font-size:var(--fs-sm)}
