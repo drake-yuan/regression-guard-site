@@ -1,0 +1,15 @@
+{
+  "name": "regression-guard-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marketing site for Regression Guard. Static HTML, zero runtime dependencies.",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "serve": "node tools/serve.mjs",
+    "shots": "node tools/shots.mjs",
+    "snap": "node tools/snap.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.0"
+  }
+}

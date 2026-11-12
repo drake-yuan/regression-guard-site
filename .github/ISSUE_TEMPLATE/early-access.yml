@@ -1,0 +1,85 @@
+name: Early access request
+description: Ask for a place in the small-batch early access programme. The issue is public.
+title: "[early access] "
+labels: ["early-access"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for looking. A few ground rules before you write anything here:
+
+        **This issue is public and permanent.** It is the whole point — you keep a thread you can find later, and we answer in the open.
+        Do **not** paste source code, repository tokens, model API keys, production credentials, or customer data. Nothing on this form needs them.
+
+        We read every request and answer in batches. If the first slot we can offer is far out, we will say so rather than leave you waiting.
+
+  - type: input
+    id: handle
+    attributes:
+      label: What should we call you?
+      description: A name or handle. No need for a full legal name.
+      placeholder: e.g. "Dana K." or "@dana"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Which coding agent do you use?
+      description: Pick the closest one. The list is not exhaustive — use "Other" if yours is missing.
+      options:
+        - Claude Code
+        - Codex
+        - Cursor
+        - Another agent or CLI
+        - Mostly hand-written code
+    validations:
+      required: true
+
+  - type: input
+    id: stack
+    attributes:
+      label: What kind of project?
+      description: Framework, language, and roughly how big. This decides whether the setup path fits.
+      placeholder: e.g. "Next.js + TypeScript, ~40k lines, 3 engineers"
+    validations:
+      required: true
+
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Which behavior do you most want protected?
+      description: The thing that must keep working when an agent changes something nearby. One or two sentences is enough.
+      placeholder: e.g. "Checkout totals with stacked discounts. We have broken this twice this quarter."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: where
+    attributes:
+      label: Where would it run?
+      description: Pick everything that applies.
+      options:
+        - label: On my machine, after each agent change
+        - label: In CI, on a schedule or on every pull request
+        - label: On a shared machine the team uses
+    validations:
+      required: true
+
+  - type: textarea
+    id: checks
+    attributes:
+      label: Do you already have checks you trust? (optional)
+      description: Existing Playwright tests, a smoke suite, a list of manual checks. If you have none, say so — that is a normal starting point.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I understand this issue is public, and I have not included source code, tokens, API keys, credentials, or customer data.
+          required: true
+        - label: I understand the product is pre-release and there is no automatic signup, no billing, and no SLA yet.
+          required: true

@@ -1,0 +1,250 @@
+<!-- HERO -->
+<section class="mk-hero"><div class="mk-wrap">
+<span class="mk-eyebrow">A verification layer for AI-driven development</span>
+<h1 class="mk-h1">Your agent changed the code.<br><span class="mk-grad">Did it break anything?</span></h1>
+<p class="mk-hero-sub">AI coding agents ship changes faster than anyone can review them. Regression Guard verifies what a change should do — and what must keep working. Automatically, with evidence you can hand to a reviewer.</p>
+<div class="mk-cta">
+<a class="mk-btn primary lg" href="#demo">See a full verdict<svg class="icon" aria-hidden="true"><use href="#mi-arrow"/></svg></a>
+<a class="mk-btn ghost lg" href="#how">The five-step loop</a>
+</div>
+<p class="mk-note"><span>Built on your existing project and Playwright checks</span><span>Designed to run locally, no source upload</span></p>
+
+<div class="mk-visual">
+<div class="mk-window">
+<div class="mk-winbar"><span class="mk-dots"><i></i><i></i><i></i></span><span class="mk-wtitle">REGRESSION GUARD / CHANGE VERIFICATION</span><span class="mk-chip demo">ILLUSTRATIVE DEMO</span></div>
+<div class="mk-report">
+<div class="mk-strip"><span class="mk-tag">CODE CHANGE</span><span>feat: add coupon claim flow</span><span class="mk-strip-meta">3 files changed</span></div>
+<div class="mk-exps">
+<div class="mk-exp pass">
+<span class="mk-sym"><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg></span>
+<div><b>Target · A customer can claim an eligible coupon</b><small>claim action → success feedback → coupon appears in account</small></div>
+<span class="mk-res">PASS</span>
+</div>
+<div class="mk-exp fail">
+<span class="mk-sym"><svg class="icon" aria-hidden="true"><use href="#mi-alert"/></svg></span>
+<div><b>Protection · Claiming a coupon must not change inventory</b><small>inventory before: 12 · inventory after: 11</small></div>
+<span class="mk-res">FAIL</span>
+</div>
+</div>
+<div class="mk-evi">
+<div class="mk-evi-h"><span>EVIDENCE-BASED FINDING</span><span>CHECK #INV-004</span></div>
+<p>Expected inventory: <b>12</b><br>Observed inventory: <b>11</b><br>The coupon claim flow appears to trigger an unexpected inventory decrement.</p>
+</div>
+<div class="mk-winfoot"><span>bound to commit 9f2c1a7 · local runner</span><span>example data, not a real run</span></div>
+</div>
+</div>
+</div>
+
+<div class="mk-facts">
+<div class="mk-fact"><b>01 · Understand the change</b><small>Target vs. protection expectations</small></div>
+<div class="mk-fact"><b>02 · Protect existing behavior</b><small>Reuse checks the team approved</small></div>
+<div class="mk-fact"><b>03 · Verify with evidence</b><small>Every verdict bound to a run and a version</small></div>
+</div>
+</div></section>
+
+<!-- PRODUCT DEMO -->
+<section class="mk-sec tint" id="demo"><div class="mk-wrap">
+<div class="mk-sec-head">
+<span class="mk-eyebrow">See the product in action</span>
+<h2 class="mk-h2">Not just another test run.<br><span class="mk-grad">A decision you can trust.</span></h2>
+<p class="mk-lede">Follow one code change through the workflow: identify intended behavior, reuse approved checks, and report what the evidence actually proves.</p>
+</div>
+
+<div class="mk-demo">
+<div class="mk-tabs" role="tablist" aria-label="Product workflow demo">
+<button class="mk-tab" type="button" role="tab" id="tab-understand" aria-selected="true" aria-controls="demoPanel" data-demo="understand"><span>STEP 01</span>Understand the change</button>
+<button class="mk-tab" type="button" role="tab" id="tab-reuse" aria-selected="false" aria-controls="demoPanel" data-demo="reuse" tabindex="-1"><span>STEP 02</span>Reuse approved checks</button>
+<button class="mk-tab" type="button" role="tab" id="tab-evidence" aria-selected="false" aria-controls="demoPanel" data-demo="evidence" tabindex="-1"><span>STEP 03</span>Decide from evidence</button>
+</div>
+<div class="mk-demo-body" id="demoPanel" role="tabpanel" aria-labelledby="tab-understand" tabindex="0">
+<div class="mk-demo-copy">
+<span class="mk-eyebrow" id="demoEyebrow">Change intelligence</span>
+<h3 id="demoTitle">Understand what the agent intended.</h3>
+<p id="demoDescription">Regression Guard reads the change context and separates the new behavior that should work from existing behavior that must remain unaffected.</p>
+<div class="mk-points" id="demoPoints"></div>
+</div>
+<div class="mk-demo-out">
+<div class="mk-out-h"><span id="outputTitle">CHANGE ANALYSIS</span><span>EXAMPLE OUTPUT</span></div>
+<pre class="mk-codeblock" id="demoOutput"></pre>
+<div class="mk-out-f" id="outputFoot"></div>
+</div>
+</div>
+<div class="mk-demo-foot">INTERACTIVE PRODUCT CONCEPT · ALL PROJECT DATA AND RESULTS SHOWN ARE ILLUSTRATIVE</div>
+</div>
+
+<div class="mk-proof">
+<div><b>Understand intent</b><span>Connect the requested outcome to the actual code change.</span></div>
+<div><b>Reuse knowledge</b><span>Carry approved behavioral checks forward across changes.</span></div>
+<div><b>Show the evidence</b><span>Make every verdict traceable to an expectation and an observation.</span></div>
+</div>
+</div></section>
+
+<!-- WORKFLOW -->
+<section class="mk-sec" id="how"><div class="mk-wrap">
+<div class="mk-sec-head">
+<span class="mk-eyebrow">The verification workflow</span>
+<h2 class="mk-h2">Five steps from a code change<br>to <span class="mk-grad">evidence-backed confidence.</span></h2>
+<p class="mk-lede">Change context, behavioral expectations, reusable checks and deterministic execution are one loop — not four disconnected features.</p>
+</div>
+<div class="mk-flow">
+<article class="mk-flow-step"><div class="mk-flow-n">01</div><h3>Capture the change</h3><p>Collect the developer request, agent summary, Git diff and relevant project context.</p><small>CHANGE CONTEXT</small></article>
+<article class="mk-flow-step"><div class="mk-flow-n">02</div><h3>Understand behavior</h3><p>Identify target behavior and the existing behavior that must remain intact.</p><small>EXPECTATIONS</small></article>
+<article class="mk-flow-step"><div class="mk-flow-n">03</div><h3>Match existing checks</h3><p>Reuse approved checks first. Propose new ones only where coverage is missing.</p><small>CHECK ASSETS</small></article>
+<article class="mk-flow-step"><div class="mk-flow-n">04</div><h3>Run and collect evidence</h3><p>Execute against the intended code version and capture the relevant observations.</p><small>PLAYWRIGHT + EVIDENCE</small></article>
+<article class="mk-flow-step"><div class="mk-flow-n">05</div><h3>Verdict and feedback</h3><p>Return PASS, FAIL or UNKNOWN with evidence a developer or agent can act on.</p><small>TRUSTED FEEDBACK</small></article>
+</div>
+
+<div class="mk-shotwrap">
+<div class="mk-shot">
+<div class="mk-shotbar"><i></i><i></i><i></i><span class="mk-url">regression guard / commerce-lab / verification runs</span></div>
+<img src="{{p}}assets/img/workspace.png" width="1280" height="820" loading="lazy" decoding="async" alt="Workspace prototype: latest verdict, the failing expectation with its evidence, and the list of code changes under verification.">
+</div>
+<p class="mk-figcap">The actual workspace prototype — light UI, sample data. The dark panel above is a concept mock-up, labeled as such.</p>
+</div>
+</div></section>
+
+<!-- ASSETS -->
+<section class="mk-sec tint" id="assets"><div class="mk-wrap">
+<div class="mk-assets">
+<div>
+<span class="mk-eyebrow">Knowledge that compounds</span>
+<h2 class="mk-h2">Approve behavior once.<br><span class="mk-grad">Reuse the confidence.</span></h2>
+<p>A regression check should become a reusable project asset, not disposable code written for a single run.</p>
+<p>Approved expectations and their checks carry forward to future changes. As coverage grows, repeated manual analysis shrinks — without silently changing what the team considers correct.</p>
+<a class="mk-btn ghost" href="#pricing">Explore early access<svg class="icon" aria-hidden="true"><use href="#mi-arrow"/></svg></a>
+</div>
+<div class="mk-assetcard">
+<div class="mk-assetcard-h"><span>PROJECT BEHAVIORAL ASSETS</span><span class="mk-cyan">REUSABLE KNOWLEDGE</span></div>
+<div class="mk-assetrow"><span class="mk-aicon"><svg class="icon" aria-hidden="true"><use href="#mi-target"/></svg></span><div><b>Coupon claim behavior</b><small>approved expectation · target</small></div><span class="mk-state">APPROVED</span></div>
+<div class="mk-assetrow"><span class="mk-aicon"><svg class="icon" aria-hidden="true"><use href="#mi-shield"/></svg></span><div><b>Inventory remains unchanged</b><small>approved expectation · protection</small></div><span class="mk-state">APPROVED</span></div>
+<div class="mk-assetrow"><span class="mk-aicon"><svg class="icon" aria-hidden="true"><use href="#mi-checks"/></svg></span><div><b>Checkout happy path</b><small>reusable Playwright check</small></div><span class="mk-state">HEALTHY*</span></div>
+<div class="mk-assetrow"><span class="mk-aicon"><svg class="icon" aria-hidden="true"><use href="#mi-layers"/></svg></span><div><b>Account coupon list</b><small>reusable Playwright check</small></div><span class="mk-state">HEALTHY*</span></div>
+<div class="mk-growth"><svg class="icon" aria-hidden="true"><use href="#mi-arrow"/></svg><span>Every approved behavior becomes part of the project's future verification knowledge.</span></div>
+<p class="mk-footnote">* illustrative asset states, not live product data</p>
+</div>
+</div>
+</div></section>
+
+<!-- VERDICTS -->
+<section class="mk-sec" id="verdict"><div class="mk-wrap">
+<div class="mk-sec-head">
+<span class="mk-eyebrow">Evidence before confidence</span>
+<h2 class="mk-h2">Three verdicts.<br><span class="mk-grad">No false confidence.</span></h2>
+<p class="mk-lede">A browser run finishing successfully is not proof that a change is correct. A verdict has to rest on approved expectations and sufficient evidence.</p>
+</div>
+<div class="mk-verdicts">
+<article class="mk-verdict pass">
+<div class="mk-verdict-top"><span class="mk-verdict-sym"><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg></span><h3>PASS</h3></div>
+<p>Every required expectation has sufficient evidence that the observed behavior matches what was approved.</p>
+<div class="mk-verdict-rule"><b>REQUIREMENT</b>All required checks executed and passed.</div>
+</article>
+<article class="mk-verdict fail">
+<div class="mk-verdict-top"><span class="mk-verdict-sym"><svg class="icon" aria-hidden="true"><use href="#mi-alert"/></svg></span><h3>FAIL</h3></div>
+<p>Evidence shows at least one required expectation was violated by the observed behavior.</p>
+<div class="mk-verdict-rule"><b>REQUIREMENT</b>Name the violated expectation and attach its evidence.</div>
+</article>
+<article class="mk-verdict unknown">
+<div class="mk-verdict-top"><span class="mk-verdict-sym"><svg class="icon" aria-hidden="true"><use href="#mi-help"/></svg></span><h3>UNKNOWN</h3></div>
+<p>Evidence is missing, execution is incomplete, or the result cannot be attributed to the change.</p>
+<div class="mk-verdict-rule"><b>REQUIREMENT</b>Never convert insufficient evidence into a PASS.</div>
+</article>
+</div>
+<div class="mk-noevi"><b>No evidence. No PASS.</b><span>When the system cannot prove the result, it has to say so.</span></div>
+</div></section>
+
+<!-- SECURITY -->
+<section class="mk-sec tint" id="security"><div class="mk-wrap">
+<div class="mk-sec-head">
+<span class="mk-eyebrow">Trust is a product requirement</span>
+<h2 class="mk-h2">Verification should be<br><span class="mk-grad">controlled, traceable and honest.</span></h2>
+<p class="mk-lede">A verification tool must not introduce new risk while reducing regression risk. These are the design principles behind the product.</p>
+</div>
+<div class="mk-security">
+<article class="mk-secitem"><span class="mk-ico"><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg></span><div><h3>Approved expectations</h3><p>AI can propose expectations. A new business rule never becomes an approved fact on its own.</p></div></article>
+<article class="mk-secitem"><span class="mk-ico cyan"><svg class="icon" aria-hidden="true"><use href="#mi-clock"/></svg></span><div><h3>Version-bound evidence</h3><p>Every result names the code, check, expectation and environment versions it belongs to.</p></div></article>
+<article class="mk-secitem"><span class="mk-ico amber"><svg class="icon" aria-hidden="true"><use href="#mi-ban"/></svg></span><div><h3>Controlled side effects</h3><p>Test actions use explicit permissions and controlled data. Dangerous operations do not run by default.</p></div></article>
+<article class="mk-secitem"><span class="mk-ico green"><svg class="icon" aria-hidden="true"><use href="#mi-alert"/></svg></span><div><h3>Honest uncertainty</h3><p>Incomplete evidence, unstable environments and ambiguous outcomes are reported as UNKNOWN, not hidden.</p></div></article>
+</div>
+<p class="mk-security-note">These statements describe intended product principles. Deployment, data handling, permissions and integration guarantees must be verified against the actual implementation before being presented as operational security claims.</p>
+</div></section>
+
+<!-- PRICING -->
+<section class="mk-sec" id="pricing"><div class="mk-wrap">
+<div class="mk-sec-head center">
+<span class="mk-eyebrow">Pricing</span>
+<h2 class="mk-h2">Pay per project.<br><span class="mk-grad">Model cost stays yours.</span></h2>
+<p class="mk-lede">We do not resell model calls. You connect your own key to your own model account — transparent billing, switchable at any time.</p>
+</div>
+<div class="mk-price">
+<div class="mk-plan"><h3>Free</h3><div class="mk-amount"><b>$0</b><span>/ forever</span></div><p class="mk-lead-sm">Get one project verified end to end.</p>
+<ul>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>1 project · 1 coding agent</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Change-triggered runs, unlimited</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Manual full runs, 3 / month</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Evidence kept 7 days</li>
+<li class="off"><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Scheduled runs</li>
+</ul>
+<a class="mk-btn block" href="{{p}}access.html">Request early access</a></div>
+
+<div class="mk-plan hot"><span class="mk-badge">Recommended</span><h3>Pro</h3><div class="mk-amount"><b>$19</b><span>/ month</span></div><p class="mk-lead-sm">For one person or a small team.</p>
+<ul>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>5 projects · unlimited agents</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Full runs, unlimited</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Scheduled runs via CI</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Evidence kept 90 days</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Shared expectation library</li>
+</ul>
+<a class="mk-btn primary block" href="{{p}}access.html">Request early access</a></div>
+
+<div class="mk-plan"><h3>Team</h3><div class="mk-amount"><b>$59</b><span>/ month</span></div><p class="mk-lead-sm">For teams that need approval and audit.</p>
+<ul>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Unlimited projects</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Approval trail and review flow</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Evidence export · audit report</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Private runner</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>SSO (planned)</li>
+</ul>
+<a class="mk-btn block" href="{{p}}access.html">Talk to us</a></div>
+</div>
+
+<div class="mk-byok">
+<span class="mk-ico"><svg class="icon" aria-hidden="true"><use href="#mi-key"/></svg></span>
+<div><b>Bring your own model key — we do not pay for it</b>
+<p>There is no built-in model quota in the first release. You pick a provider (OpenAI / Anthropic / DeepSeek / Qwen / any OpenAI-compatible endpoint) and enter your own API key; usage is billed to your model account directly. A run costs cents, not dollars, because only the check steps and failure explanations touch a model — the interface estimates it from your actual token usage instead of guessing.</p>
+<p>The model does exactly two things: draft check steps and explain failures. <b>Verdicts never pass through the model</b> — they are computed from deterministic assertions against approved expectations. Swapping models cannot change a historical verdict.</p></div>
+</div>
+<p class="mk-note spaced">Prices are indicative while the product is in early access. Nothing is charged on this page.</p>
+</div></section>
+
+<!-- FAQ -->
+<section class="mk-sec tint" id="faq"><div class="mk-wrap">
+<div class="mk-faq">
+<div class="mk-faq-intro">
+<span class="mk-eyebrow">Questions &amp; answers</span>
+<h2>Built for the way software is changing.</h2>
+<p>AI coding is changing how fast teams ship. Here is how this product approaches the verification problem.</p>
+</div>
+<div class="mk-faq-list">
+<details open><summary>Is this another AI test generator?</summary><p>Not exactly. Generating a test is one part of verification. The product is built around understanding the change, separating target from protection expectations, reusing approved checks, executing them and producing an evidence-backed verdict.</p></details>
+<details><summary>Do I have to write every test manually?</summary><p>No. Existing project checks are reused wherever possible, and missing ones are proposed. New business expectations still require review and approval — the goal is to remove repetitive work, not to hide decisions.</p></details>
+<details><summary>Does it replace Playwright?</summary><p>No. Playwright is the browser execution engine. This sits above it: change understanding, expectation governance, check reuse, evidence collection and verdict handling.</p></details>
+<details><summary>What if a check cannot produce a reliable result?</summary><p>Then the verdict is UNKNOWN, not PASS. Incomplete execution, insufficient evidence and environment problems stay visible so someone can investigate them.</p></details>
+<details><summary>Does it work with every coding agent?</summary><p>Integration is an engineering problem, not a diagram claim. Supported agents are listed only after the end-to-end flow has actually been verified. The first release supports one project and one agent.</p></details>
+<details><summary>Can it guarantee no regression will ever happen?</summary><p>No testing system can honestly promise that. The point is to lower verification cost and raise confidence by checking approved behaviors with traceable evidence. Coverage limits stay explicit.</p></details>
+</div>
+</div>
+</div></section>
+
+<!-- FINAL CTA -->
+<section class="mk-final-sec" id="get-started"><div class="mk-wrap">
+<div class="mk-final">
+<span class="mk-eyebrow">Make every change verifiable</span>
+<h2>Your AI agent ships faster.<br><span class="mk-grad">Know what still works.</span></h2>
+<p>Build a verification loop around the project you already have, the behaviors you already approved, and the checks you already trust.</p>
+<div class="mk-cta">
+<a class="mk-btn primary lg" href="{{p}}access.html">Request early access<svg class="icon" aria-hidden="true"><use href="#mi-arrow"/></svg></a>
+<a class="mk-btn ghost lg" href="#how">See the five steps</a>
+</div>
+<p class="mk-note">No credit card · onboarding in small batches · you can leave at any time</p>
+</div>
+</div></section>

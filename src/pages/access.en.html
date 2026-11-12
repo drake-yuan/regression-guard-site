@@ -1,0 +1,70 @@
+<div class="mk-auth">
+<aside class="mk-authside">
+<div class="mk-aside-copy">
+<h2>Onboarding in small batches,<br>because setup is a conversation.</h2>
+<p>The product is pre-release. Every early access request is read by a human, and the first verified change usually happens in the same session as setup.</p>
+<ul class="mk-trust">
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>No credit card, no automatic renewal</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Your source and model key stay on your machine</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Leave at any time; nothing is locked in</li>
+</ul>
+</div>
+<div class="mk-rail" aria-label="How onboarding works">
+<div class="mk-railitem on"><span class="mk-raildot">1</span><div><b>Send one short request</b><small>Project type, coding agent, what you want verified</small></div></div>
+<div class="mk-railitem"><span class="mk-raildot">2</span><div><b>30-minute setup</b><small>Point it at one project, pick one check you already trust</small></div></div>
+<div class="mk-railitem"><span class="mk-raildot">3</span><div><b>First verified change</b><small>One agent change → PASS / FAIL / UNKNOWN with evidence</small></div></div>
+</div>
+<div class="mk-secure">
+<svg class="icon" aria-hidden="true"><use href="#mi-lock"/></svg>
+<span>This page does not ask for an API key. In the product, the key is stored locally on your machine and used only for the requests you start.</span>
+</div>
+</aside>
+
+<div class="mk-authmain">
+<div class="mk-form wide">
+<a class="mk-backlink" href="{{home}}"><svg class="icon" aria-hidden="true"><use href="#mi-back"/></svg>Back to overview</a>
+<span class="mk-eyebrow">Early access</span>
+<h1>Request early access</h1>
+<p class="mk-sub">Requests are handled in order, in small batches. There is no automated signup flow yet — and we would rather say that than email you a broken link.</p>
+
+<div class="mk-invite">
+<div class="mk-invite-h"><svg class="icon" aria-hidden="true"><use href="#mi-github"/></svg><b>Send the request on GitHub</b></div>
+<ul>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Which coding agent you use (Codex, Claude Code, Cursor, or your own)</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>What kind of project it is, and which behavior you most want protected</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Whether you would run it locally only, or in CI as well</li>
+</ul>
+<div class="mk-invite-actions">
+<a class="mk-btn primary" href="{{earlyAccessUrl}}" target="_blank" rel="noopener">Open the request form<svg class="icon mk-ext" aria-hidden="true"><use href="#mi-external"/></svg></a>
+<a class="mk-btn ghost" href="{{p}}privacy.html">What we store</a>
+</div>
+<p class="mk-hint">The form opens as a public GitHub issue, so the thread stays searchable for you. Please do not paste source code, credentials or customer data into it.</p>
+</div>
+
+<div class="mk-subblock">
+<h2>What the early access build includes</h2>
+<ul class="mk-list">
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>One project, one coding agent, triggered by a hook after each change</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Local Playwright execution with evidence attached to every verdict</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Approved expectations you review and keep — the AI can propose, never approve</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Manual full runs, plus a CI job for scheduled regression</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>Bring your own model key: the run stays on your machine, the bill stays on your account</li>
+</ul>
+</div>
+
+<div class="mk-subblock">
+<h2>What we never ask for</h2>
+<ul class="mk-list muted">
+<li><svg class="icon" aria-hidden="true"><use href="#mi-x"/></svg>Your source code or a repo token</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-x"/></svg>Your model API key, on this site or by email</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-x"/></svg>Production credentials, customer records or anything you would not post publicly</li>
+</ul>
+</div>
+
+<div class="mk-subblock">
+<h2>Why the request goes through GitHub</h2>
+<p class="mk-hint">A static site cannot honestly promise to store your email securely, and a form that silently fails is worse than no form. A public issue needs no backend, keeps a record you can point to, and lets us ask follow-up questions in the same place. If your organisation cannot use GitHub, reply on any issue thread and we will find another channel.</p>
+</div>
+</div>
+</div>
+</div>

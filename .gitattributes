@@ -1,0 +1,8 @@
+# Site output is read by browsers: keep LF everywhere, including on Windows
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.webp binary
+*.ico binary
+*.woff2 binary

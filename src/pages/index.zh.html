@@ -1,0 +1,250 @@
+<!-- HERO -->
+<section class="mk-hero"><div class="mk-wrap">
+<span class="mk-eyebrow">为 AI 生成代码而生的验证层</span>
+<h1 class="mk-h1">Agent 说改好了。<br><span class="mk-grad">你拿什么证明？</span></h1>
+<p class="mk-hero-sub">AI 写代码的速度，已经超过任何人能逐行复核的速度。Regression Guard 验证这次修改应该做到什么、又不许弄坏什么——自动执行，并给出能直接递给评审者的证据。</p>
+<div class="mk-cta">
+<a class="mk-btn primary lg" href="#demo">看一次完整判定<svg class="icon" aria-hidden="true"><use href="#mi-arrow"/></svg></a>
+<a class="mk-btn ghost lg" href="#how">五个环节怎么跑</a>
+</div>
+<p class="mk-note"><span>围绕你现有的项目与 Playwright 检查构建</span><span>按本地执行设计，源码不上传</span></p>
+
+<div class="mk-visual">
+<div class="mk-window">
+<div class="mk-winbar"><span class="mk-dots"><i></i><i></i><i></i></span><span class="mk-wtitle">REGRESSION GUARD / 变更验证</span><span class="mk-chip demo">示例演示</span></div>
+<div class="mk-report">
+<div class="mk-strip"><span class="mk-tag">代码变更</span><span>feat: 新增优惠券领取流程</span><span class="mk-strip-meta">3 个文件改动</span></div>
+<div class="mk-exps">
+<div class="mk-exp pass">
+<span class="mk-sym"><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg></span>
+<div><b>目标 · 顾客可以领取符合条件的优惠券</b><small>领取操作 → 成功反馈 → 券出现在账户中</small></div>
+<span class="mk-res">PASS</span>
+</div>
+<div class="mk-exp fail">
+<span class="mk-sym"><svg class="icon" aria-hidden="true"><use href="#mi-alert"/></svg></span>
+<div><b>保护 · 领券不应改变库存</b><small>库存 领取前 12 · 领取后 11</small></div>
+<span class="mk-res">FAIL</span>
+</div>
+</div>
+<div class="mk-evi">
+<div class="mk-evi-h"><span>基于证据的发现</span><span>CHECK #INV-004</span></div>
+<p>期望库存：<b>12</b><br>实际观测：<b>11</b><br>领券流程似乎触发了非预期的库存扣减。</p>
+</div>
+<div class="mk-winfoot"><span>绑定 commit 9f2c1a7 · 本地 Runner</span><span>示例数据，非真实运行结果</span></div>
+</div>
+</div>
+</div>
+
+<div class="mk-facts">
+<div class="mk-fact"><b>01 · 读懂这次变更</b><small>分清目标预期与保护预期</small></div>
+<div class="mk-fact"><b>02 · 守住既有行为</b><small>复用团队已批准的检查</small></div>
+<div class="mk-fact"><b>03 · 用证据下结论</b><small>每条结论绑定一次运行与一个版本</small></div>
+</div>
+</div></section>
+
+<!-- PRODUCT DEMO -->
+<section class="mk-sec tint" id="demo"><div class="mk-wrap">
+<div class="mk-sec-head">
+<span class="mk-eyebrow">产品演示</span>
+<h2 class="mk-h2">不是又跑了一遍测试。<br><span class="mk-grad">而是一个可信的结论。</span></h2>
+<p class="mk-lede">跟着一次代码变更走完整个流程：识别目标行为、复用已批准的检查、说清证据究竟证明了什么。</p>
+</div>
+
+<div class="mk-demo">
+<div class="mk-tabs" role="tablist" aria-label="产品流程演示">
+<button class="mk-tab" type="button" role="tab" id="tab-understand" aria-selected="true" aria-controls="demoPanel" data-demo="understand"><span>STEP 01</span>读懂这次变更</button>
+<button class="mk-tab" type="button" role="tab" id="tab-reuse" aria-selected="false" aria-controls="demoPanel" data-demo="reuse" tabindex="-1"><span>STEP 02</span>复用已批准检查</button>
+<button class="mk-tab" type="button" role="tab" id="tab-evidence" aria-selected="false" aria-controls="demoPanel" data-demo="evidence" tabindex="-1"><span>STEP 03</span>用证据下结论</button>
+</div>
+<div class="mk-demo-body" id="demoPanel" role="tabpanel" aria-labelledby="tab-understand" tabindex="0">
+<div class="mk-demo-copy">
+<span class="mk-eyebrow" id="demoEyebrow">变更理解</span>
+<h3 id="demoTitle">先搞清楚 Agent 到底想改什么。</h3>
+<p id="demoDescription">读取变更上下文，把「这次应该做到什么」和「那些不许被弄坏的既有行为」分开。</p>
+<div class="mk-points" id="demoPoints"></div>
+</div>
+<div class="mk-demo-out">
+<div class="mk-out-h"><span id="outputTitle">变更分析</span><span>示例输出</span></div>
+<pre class="mk-codeblock" id="demoOutput"></pre>
+<div class="mk-out-f" id="outputFoot"></div>
+</div>
+</div>
+<div class="mk-demo-foot">交互式产品概念 · 页面内所有项目数据与结果均为示例</div>
+</div>
+
+<div class="mk-proof">
+<div><b>读懂意图</b><span>把开发者要的结果，和实际发生的那次代码改动对上。</span></div>
+<div><b>复用知识</b><span>把已批准的行为检查，带到之后的每一次修改里。</span></div>
+<div><b>展示证据</b><span>每条结论都能回溯到一条预期和一次观测。</span></div>
+</div>
+</div></section>
+
+<!-- WORKFLOW -->
+<section class="mk-sec" id="how"><div class="mk-wrap">
+<div class="mk-sec-head">
+<span class="mk-eyebrow">验证流程</span>
+<h2 class="mk-h2">五个环节，从一次代码变更<br>到一条 <span class="mk-grad">有证据的结论。</span></h2>
+<p class="mk-lede">变更上下文、业务预期、可复用检查与确定性执行是一个闭环，不是四个互不相干的功能。</p>
+</div>
+<div class="mk-flow">
+<article class="mk-flow-step"><div class="mk-flow-n">01</div><h3>捕获变更</h3><p>收齐开发者诉求、Agent 摘要、Git 改动与相关项目上下文。</p><small>变更上下文</small></article>
+<article class="mk-flow-step"><div class="mk-flow-n">02</div><h3>理解行为</h3><p>找出目标行为，以及必须保持原样的既有行为。</p><small>业务预期</small></article>
+<article class="mk-flow-step"><div class="mk-flow-n">03</div><h3>匹配已有检查</h3><p>先用已批准的检查，只在覆盖不足处补新的。</p><small>检查资产</small></article>
+<article class="mk-flow-step"><div class="mk-flow-n">04</div><h3>执行并取证</h3><p>在目标代码版本上执行，采集相关观测结果。</p><small>PLAYWRIGHT + 证据</small></article>
+<article class="mk-flow-step"><div class="mk-flow-n">05</div><h3>判定与反馈</h3><p>输出 PASS / FAIL / UNKNOWN，附上能据以行动的证据。</p><small>可信反馈</small></article>
+</div>
+
+<div class="mk-shotwrap">
+<div class="mk-shot">
+<div class="mk-shotbar"><i></i><i></i><i></i><span class="mk-url">regression guard / commerce-lab / 验证记录</span></div>
+<img src="{{p}}assets/img/workspace.png" width="1280" height="820" loading="lazy" decoding="async" alt="工作台原型：最近一次结论、失败预期及其证据入口、待验证的代码变更列表。">
+</div>
+<p class="mk-figcap">工作台原型实拍——浅色界面，示例数据。上方深色面板是概念稿，已明确标注。</p>
+</div>
+</div></section>
+
+<!-- ASSETS -->
+<section class="mk-sec tint" id="assets"><div class="mk-wrap">
+<div class="mk-assets">
+<div>
+<span class="mk-eyebrow">会复利的知识</span>
+<h2 class="mk-h2">批准一次行为，<br><span class="mk-grad">复用到之后的每一次修改。</span></h2>
+<p>一条回归检查应该沉淀成项目资产，而不是为单次运行写下的一次性代码。</p>
+<p>已批准的预期与对应检查，会带到之后的改动里。覆盖越厚，重复的人工分析越少——但不会偷偷改变团队认定的「正确」。</p>
+<a class="mk-btn ghost" href="#pricing">了解内测<svg class="icon" aria-hidden="true"><use href="#mi-arrow"/></svg></a>
+</div>
+<div class="mk-assetcard">
+<div class="mk-assetcard-h"><span>项目行为资产</span><span class="mk-cyan">可复用知识</span></div>
+<div class="mk-assetrow"><span class="mk-aicon"><svg class="icon" aria-hidden="true"><use href="#mi-target"/></svg></span><div><b>优惠券领取行为</b><small>已批准预期 · 目标</small></div><span class="mk-state">已批准</span></div>
+<div class="mk-assetrow"><span class="mk-aicon"><svg class="icon" aria-hidden="true"><use href="#mi-shield"/></svg></span><div><b>库存保持不变</b><small>已批准预期 · 保护</small></div><span class="mk-state">已批准</span></div>
+<div class="mk-assetrow"><span class="mk-aicon"><svg class="icon" aria-hidden="true"><use href="#mi-checks"/></svg></span><div><b>结算主流程</b><small>可复用 Playwright 检查</small></div><span class="mk-state">健康*</span></div>
+<div class="mk-assetrow"><span class="mk-aicon"><svg class="icon" aria-hidden="true"><use href="#mi-layers"/></svg></span><div><b>账户优惠券列表</b><small>可复用 Playwright 检查</small></div><span class="mk-state">健康*</span></div>
+<div class="mk-growth"><svg class="icon" aria-hidden="true"><use href="#mi-arrow"/></svg><span>每一条被批准的行为，都会成为这个项目未来的验证知识。</span></div>
+<p class="mk-footnote">* 资产状态为示例，非实时产品数据</p>
+</div>
+</div>
+</div></section>
+
+<!-- VERDICTS -->
+<section class="mk-sec" id="verdict"><div class="mk-wrap">
+<div class="mk-sec-head">
+<span class="mk-eyebrow">先要证据，再谈信心</span>
+<h2 class="mk-h2">三种判定。<br><span class="mk-grad">不制造虚假的确定感。</span></h2>
+<p class="mk-lede">浏览器跑通，不等于改动正确。结论必须站在「已批准的预期」和「充足的证据」上。</p>
+</div>
+<div class="mk-verdicts">
+<article class="mk-verdict pass">
+<div class="mk-verdict-top"><span class="mk-verdict-sym"><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg></span><h3>PASS</h3></div>
+<p>所有必需预期都有充足证据，表明观测到的行为与批准的预期一致。</p>
+<div class="mk-verdict-rule"><b>要求</b>所有必需检查都执行并通过。</div>
+</article>
+<article class="mk-verdict fail">
+<div class="mk-verdict-top"><span class="mk-verdict-sym"><svg class="icon" aria-hidden="true"><use href="#mi-alert"/></svg></span><h3>FAIL</h3></div>
+<p>证据显示，至少一条必需预期被实际行为违反。</p>
+<div class="mk-verdict-rule"><b>要求</b>指名被违反的预期，并附上证据。</div>
+</article>
+<article class="mk-verdict unknown">
+<div class="mk-verdict-top"><span class="mk-verdict-sym"><svg class="icon" aria-hidden="true"><use href="#mi-help"/></svg></span><h3>UNKNOWN</h3></div>
+<p>证据缺失、执行未完成，或结果无法可靠归因于这次改动。</p>
+<div class="mk-verdict-rule"><b>要求</b>绝不把证据不足变成 PASS。</div>
+</article>
+</div>
+<div class="mk-noevi"><b>没有证据，就没有 PASS。</b><span>系统证明不了结果的时候，就必须直说。</span></div>
+</div></section>
+
+<!-- SECURITY -->
+<section class="mk-sec tint" id="security"><div class="mk-wrap">
+<div class="mk-sec-head">
+<span class="mk-eyebrow">信任是产品需求</span>
+<h2 class="mk-h2">验证应该是<br><span class="mk-grad">可控、可追溯、且诚实的。</span></h2>
+<p class="mk-lede">一个验证工具，不能在降低回归风险的同时自己引入新的风险。以下是产品遵循的设计原则。</p>
+</div>
+<div class="mk-security">
+<article class="mk-secitem"><span class="mk-ico"><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg></span><div><h3>已批准的预期</h3><p>AI 可以提出预期，但新的业务规则不会自己变成「已批准的事实」。</p></div></article>
+<article class="mk-secitem"><span class="mk-ico cyan"><svg class="icon" aria-hidden="true"><use href="#mi-clock"/></svg></span><div><h3>绑定版本的证据</h3><p>每条结果都写明它对应的代码、检查、预期与环境版本。</p></div></article>
+<article class="mk-secitem"><span class="mk-ico amber"><svg class="icon" aria-hidden="true"><use href="#mi-ban"/></svg></span><div><h3>受控的副作用</h3><p>测试操作使用显式权限与受控数据；危险操作默认不执行。</p></div></article>
+<article class="mk-secitem"><span class="mk-ico green"><svg class="icon" aria-hidden="true"><use href="#mi-alert"/></svg></span><div><h3>诚实的不知道</h3><p>证据不全、环境不稳、结果含糊，都报 UNKNOWN，而不是藏起来。</p></div></article>
+</div>
+<p class="mk-security-note">以上是产品的设计原则。部署方式、数据处理、权限与集成承诺，必须在真实实现验证之后，才能作为可运营的安全声明对外表述。</p>
+</div></section>
+
+<!-- PRICING -->
+<section class="mk-sec" id="pricing"><div class="mk-wrap">
+<div class="mk-sec-head center">
+<span class="mk-eyebrow">定价</span>
+<h2 class="mk-h2">按项目付费。<br><span class="mk-grad">模型费用由你自己掌握。</span></h2>
+<p class="mk-lede">我们不转售模型调用。你用自己的 Key 连自己的模型账号，账单透明，随时可换。</p>
+</div>
+<div class="mk-price">
+<div class="mk-plan"><h3>Free</h3><div class="mk-amount"><b>$0</b><span>/ 永久</span></div><p class="mk-lead-sm">先把一个项目完整跑通。</p>
+<ul>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>1 个项目 · 1 个 Coding Agent</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>变更触发不限次</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>手动全量 3 次 / 月</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>证据保留 7 天</li>
+<li class="off"><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>定时回归</li>
+</ul>
+<a class="mk-btn block" href="{{p}}access.html">申请内测</a></div>
+
+<div class="mk-plan hot"><span class="mk-badge">推荐</span><h3>Pro</h3><div class="mk-amount"><b>$19</b><span>/ 月</span></div><p class="mk-lead-sm">一个人或一个小团队的日常。</p>
+<ul>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>5 个项目 · 不限 Agent</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>全量回归不限次</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>定时回归 · CI 触发</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>证据保留 90 天</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>共享预期库</li>
+</ul>
+<a class="mk-btn primary block" href="{{p}}access.html">申请内测</a></div>
+
+<div class="mk-plan"><h3>Team</h3><div class="mk-amount"><b>$59</b><span>/ 月</span></div><p class="mk-lead-sm">需要审批与审计的团队。</p>
+<ul>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>不限项目</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>预期批准留痕与审批流</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>证据导出 · 审计报告</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>私有 Runner</li>
+<li><svg class="icon" aria-hidden="true"><use href="#mi-check"/></svg>SSO（规划中）</li>
+</ul>
+<a class="mk-btn block" href="{{p}}access.html">联系我们</a></div>
+</div>
+
+<div class="mk-byok">
+<span class="mk-ico"><svg class="icon" aria-hidden="true"><use href="#mi-key"/></svg></span>
+<div><b>自带模型 Key，不是我们代付</b>
+<p>首版不提供内置模型额度。你在设置里选择服务商（OpenAI / Anthropic / DeepSeek / 通义千问 / 任意 OpenAI 兼容端点）并填入自己的 API Key，费用由你的模型账号直接结算。一次运行的模型成本通常在几美分到几十美分之间，取决于模型与检查条数——界面上按你的实际 token 用量估算，而不是拍一个数。</p>
+<p>模型只做两件事：起草检查步骤、解释失败原因。<b>判定不经过模型</b>——结论由确定性断言与已批准预期计算得出，换模型不会改变历史结论。</p></div>
+</div>
+<p class="mk-note spaced">内测期间价格仅供参考，本页不发生任何支付。</p>
+</div></section>
+
+<!-- FAQ -->
+<section class="mk-sec tint" id="faq"><div class="mk-wrap">
+<div class="mk-faq">
+<div class="mk-faq-intro">
+<span class="mk-eyebrow">常见问题</span>
+<h2>为正在改变的写码方式而做。</h2>
+<p>AI 编码在改变团队交付的节奏。这里说明这个产品怎么看待「验证」这件事。</p>
+</div>
+<div class="mk-faq-list">
+<details open><summary>这是又一个 AI 测试生成器吗？</summary><p>不完全。生成测试只是验证的一部分。产品围绕「理解改动 → 分清目标与保护预期 → 复用已批准检查 → 执行取证 → 给出结论」构建。</p></details>
+<details><summary>我需要手写每一条测试吗？</summary><p>不用。优先复用项目已有的检查，缺的才提新的。新的业务预期仍然需要人工审阅批准——目标是消掉重复劳动，不是藏起该做的决定。</p></details>
+<details><summary>它替代 Playwright 吗？</summary><p>不替代。Playwright 是浏览器执行引擎，这一层在它上面：变更理解、预期治理、检查复用、证据采集与判定。</p></details>
+<details><summary>检查跑不出可靠结果时怎么办？</summary><p>那就判 UNKNOWN，不判 PASS。执行不全、证据不足、环境问题都要留在明面上，让人能查。</p></details>
+<details><summary>它支持所有 Coding Agent 吗？</summary><p>集成是工程问题，不是画个图就能承诺的。只有端到端验证过的 Agent 才会被列出来。首版支持一个项目 + 一个 Agent。</p></details>
+<details><summary>它能保证永远不出回归吗？</summary><p>没有任何测试系统能诚实承诺这一点。它的价值是降低验证成本、用可追溯的证据提高信心；覆盖的边界始终写在明面上。</p></details>
+</div>
+</div>
+</div></section>
+
+<!-- FINAL CTA -->
+<section class="mk-final-sec" id="get-started"><div class="mk-wrap">
+<div class="mk-final">
+<span class="mk-eyebrow">让每一次修改都可验证</span>
+<h2>你的 Agent 越来越快。<br><span class="mk-grad">至少得知道还有什么在正常工作。</span></h2>
+<p>围绕你已有的项目、已批准的行为、已经信任的检查，搭起一个验证闭环。</p>
+<div class="mk-cta">
+<a class="mk-btn primary lg" href="{{p}}access.html">申请内测<svg class="icon" aria-hidden="true"><use href="#mi-arrow"/></svg></a>
+<a class="mk-btn ghost lg" href="#how">查看五个环节</a>
+</div>
+<p class="mk-note">无需信用卡 · 小批量放号 · 随时可以退出</p>
+</div>
+</div></section>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://drake-yuan.github.io/regression-guard-site/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drake-yuan.github.io/regression-guard-site/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://drake-yuan.github.io/regression-guard-site/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drake-yuan.github.io/regression-guard-site/"/>
+  </url>
+  <url>
+    <loc>https://drake-yuan.github.io/regression-guard-site/zh/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://drake-yuan.github.io/regression-guard-site/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drake-yuan.github.io/regression-guard-site/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drake-yuan.github.io/regression-guard-site/"/>
+  </url>
+  <url>
+    <loc>https://drake-yuan.github.io/regression-guard-site/access.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drake-yuan.github.io/regression-guard-site/access.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://drake-yuan.github.io/regression-guard-site/zh/access.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drake-yuan.github.io/regression-guard-site/"/>
+  </url>
+  <url>
+    <loc>https://drake-yuan.github.io/regression-guard-site/zh/access.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://drake-yuan.github.io/regression-guard-site/zh/access.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drake-yuan.github.io/regression-guard-site/access.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drake-yuan.github.io/regression-guard-site/"/>
+  </url>
+  <url>
+    <loc>https://drake-yuan.github.io/regression-guard-site/privacy.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drake-yuan.github.io/regression-guard-site/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://drake-yuan.github.io/regression-guard-site/zh/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drake-yuan.github.io/regression-guard-site/"/>
+  </url>
+  <url>
+    <loc>https://drake-yuan.github.io/regression-guard-site/zh/privacy.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://drake-yuan.github.io/regression-guard-site/zh/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drake-yuan.github.io/regression-guard-site/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drake-yuan.github.io/regression-guard-site/"/>
+  </url>
+</urlset>

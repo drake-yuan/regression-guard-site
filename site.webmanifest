@@ -1,0 +1,23 @@
+{
+  "name": "Regression Guard",
+  "short_name": "Reg Guard",
+  "description": "A verification layer for AI-driven software development.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#070C16",
+  "theme_color": "#070C16",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ]
+}

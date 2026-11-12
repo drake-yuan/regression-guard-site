@@ -1,0 +1,12 @@
+# No runtime dependencies. Playwright in tools/ is local QA only, never shipped.
+node_modules/
+
+# QA screenshots (local artifacts, not committed)
+shots/
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,34 @@
+# Regression Guard
+
+> Verify the change. Protect what matters.
+
+Regression Guard is a verification layer for AI-driven software development. It turns approved
+business behavior into reusable checks, runs them against the change a coding agent just made,
+and returns PASS / FAIL / UNKNOWN with evidence bound to a code version.
+
+## What it is not
+- Not an AI test generator: it reuses approved checks first and proposes new ones only where coverage is missing.
+- Not a Playwright replacement: Playwright executes; Regression Guard decides what to run and what the result proves.
+- Not a "no regressions ever" guarantee: UNKNOWN exists precisely because evidence can be insufficient.
+
+## Pages
+- https://drake-yuan.github.io/regression-guard-site/ — product overview (English)
+- https://drake-yuan.github.io/regression-guard-site/zh/ — product overview (Chinese)
+- https://drake-yuan.github.io/regression-guard-site/access.html — early access request and what the build includes
+- https://drake-yuan.github.io/regression-guard-site/privacy.html — what this site collects (nothing automatically)
+
+## Pricing (indicative, pre-launch)
+- Free: 1 project, 1 agent, unlimited change-triggered runs, 3 manual full runs per month
+- Pro: $19 / month, 5 projects, unlimited full runs, CI-scheduled runs, 90-day evidence
+- Team: $59 / month, unlimited projects, approval trail, evidence export, private runner
+- Model usage is bring-your-own-key. Prices are for the product; model cost is billed by your provider.
+
+## Honesty rules used on this site
+- Every project name, check id, duration and verdict shown in the UI demo is labeled illustrative.
+- No customer logos, no invented benchmark numbers, no claims about integrations that are not
+  end-to-end verified yet.
+- Verdicts never pass through a model: they are computed from deterministic assertions against
+  approved expectations.
+
+## Source
+- https://github.com/drake-yuan/regression-guard-site
