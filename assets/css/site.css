@@ -204,7 +204,7 @@
 .mk-proof span{display:block;margin-top:6px;font-size:var(--fs-xs);line-height:1.7;color:var(--mk-subtle)}
 
 /* ---------- Five-step workflow ---------- */
-.mk-flow{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.mk-flow{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-bottom:48px}
 .mk-flow:before{content:"";position:absolute;left:7%;right:7%;top:27px;height:1px;background:linear-gradient(90deg,rgba(138,180,255,.1),rgba(111,224,210,.45),rgba(138,180,255,.1))}
 .mk-flow-step{position:relative;z-index:1;min-width:0;padding:0 16px}
 .mk-flow-n{width:54px;height:54px;display:grid;place-items:center;margin-bottom:22px;border-radius:13px;border:1px solid rgba(138,180,255,.26);background:#0E1A2C;color:#A8C9FF;font:var(--fs-sm)/1 var(--mk-mono);box-shadow:0 0 0 7px var(--mk-bg)}

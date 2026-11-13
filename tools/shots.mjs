@@ -104,6 +104,21 @@ async function blockButtonContainment(page, label, out) {
   ));
 }
 
+async function flowImageSpacing(page, label, out) {
+  // Regression: the five-step flow strip (.mk-flow) once sat flush against the
+  // embedded product screenshot below it (~10px), reading as cramped. The flow
+  // must keep a comfortable vertical gap to the screenshot's top bar.
+  const gap = await page.evaluate(() => {
+    const smalls = [...document.querySelectorAll('.mk-flow-step small')];
+    const last = smalls[smalls.length - 1];
+    const bar = document.querySelector('.mk-shotbar');
+    if (!last || !bar) return null;
+    return Math.round(bar.getBoundingClientRect().top - last.getBoundingClientRect().bottom);
+  });
+  if (gap === null) return;
+  if (gap < 32) out.push(`${label}: flow-to-image gap is only ${gap}px (expected >= 32px)`);
+}
+
 async function languageRouting(page, label, out, lang) {
   // Regression: ZH navigation anchors and CTAs once resolved against the
   // repository root, so clicking the security nav item opened the EN homepage.
@@ -274,6 +289,7 @@ try {
       if (width === 1440 && (tag === 'en' || tag === 'zh')) {
         await homeInteractions(page, `${tag}@${width}`, interactionFailures);
         await languageRouting(page, `${tag}@${width}`, interactionFailures, tag);
+        await flowImageSpacing(page, `${tag}@${width}`, interactionFailures);
       }
       if (width === 390 && tag === 'en') {
         await menuInteractions(page, `${tag}@${width}`, interactionFailures);
